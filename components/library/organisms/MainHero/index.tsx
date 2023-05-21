@@ -16,7 +16,7 @@ const greetings = [
   "Olá!",
 ];
 
-const Hero = () => {
+const MainHero = () => {
   const [currentGreeting, setCurrentGreeting] = useState<number>(0);
 
   useEffect(() => {
@@ -118,4 +118,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default MainHero;
