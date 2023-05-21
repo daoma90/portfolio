@@ -1,5 +1,5 @@
-import Hero from "@/components/library/organisms/Hero";
 import GlowCards from "@/components/library/organisms/GlowCards";
+import Hero from "@/components/library/organisms/Hero";
 import Head from "next/head";
 
 export default function Home() {
