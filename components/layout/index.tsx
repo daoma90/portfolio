@@ -1,10 +1,12 @@
 import { FC, ReactNode } from "react";
 import { GlobalStyle, Theme } from "@/theme";
-import Footer from "./Footer";
 import Header from "./Header";
 import Container from "./Container";
 import { useThemeContext } from "@/context/ThemeContext";
 import CustomCursor from "../library/atoms/CustomCursor";
+import dynamic from "next/dynamic";
+
+const DynamicFooter = dynamic(() => import("./Footer"), { ssr: false });
 
 interface LayoutProps {
   children: ReactNode;
@@ -18,7 +20,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <Container>
         <Header />
         {children}
-        <Footer />
+        <DynamicFooter />
       </Container>
       <CustomCursor />
     </Theme>

@@ -7,63 +7,44 @@ import ThemeToggle from "../../library/atoms/ThemeToggle";
 import * as s from "./styles";
 
 const Header = () => {
-  const [scrollY, setScrollY] = useState<number>(0);
+  // const [scrollY, setScrollY] = useState<number>(0);
   const { cursorChangeHandler } = useMouseContext();
 
-  useEffect(() => {
-    const handleScroll = (e: Event) => {
-      setScrollY(window.scrollY);
-    };
-    if (window !== undefined) {
-      document.addEventListener("scroll", handleScroll);
-    }
+  // useEffect(() => {
+  //   const handleScroll = (e: Event) => {
+  //     setScrollY(window.scrollY);
+  //   };
+  //   if (window !== undefined) {
+  //     document.addEventListener("scroll", handleScroll);
+  //   }
 
-    return () => document.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   return () => document.removeEventListener("scroll", handleScroll);
+  // }, []);
 
-  const renderHeaderLink = (href: string, label: string) => {
+  const renderHeaderLink = (href: string, label: string, hoverType: string) => {
     return (
       <div
-        onMouseEnter={() => cursorChangeHandler("link")}
+        onMouseEnter={() => cursorChangeHandler(hoverType)}
         onMouseLeave={() => cursorChangeHandler("")}
       >
-        <CustomLink link={href}>
+        {hoverType === "link" ? (
+          <CustomLink link={href}>
+            <HeaderNavLink>{label}</HeaderNavLink>
+          </CustomLink>
+        ) : (
           <HeaderNavLink>{label}</HeaderNavLink>
-        </CustomLink>
+        )}
       </div>
     );
   };
   return (
     <s.Container>
-      <s.Header
-      // initial={{
-      //   width: "100%",
-      //   borderRadius: 0,
-      //   backgroundColor: "transparent",
-      //   y: 0,
-      // }}
-      // animate={
-      //   scrollY > 100
-      //     ? {
-      //         width: "70%",
-      //         borderRadius: 100,
-      //         // backgroundColor: "red",
-      //         y: 30,
-      //       }
-      //     : {
-      //         width: "100%",
-      //         borderRadius: 0,
-      //         backgroundColor: "transparent",
-      //         y: 0,
-      //       }
-      // }
-      // transition={{ duration: 0.3 }}
-      >
+      <s.Header>
         <Logo />
         <s.Navigation>
-          {renderHeaderLink("/", "<Home />")}
-          {renderHeaderLink("/about", "<About />")}
-          {renderHeaderLink("/contact", "<Contact />")}
+          {renderHeaderLink("/", "<Home />", "link")}
+          {renderHeaderLink("/about", "<About />", "construction")}
+          {renderHeaderLink("/contact", "<Contact />", "construction")}
         </s.Navigation>
         <ThemeToggle />
       </s.Header>

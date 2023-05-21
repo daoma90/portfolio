@@ -26,7 +26,7 @@ const darkColors: { [key: string]: any } = {
   secondaryAccent: "#000000",
   textPrimary: "#FFFFFF",
   cursor: "#646464",
-  bubbles: "#ED5565",
+  bubbles: "#3d3d3d",
 };
 
 const colors: { [key: string]: any } = {
@@ -37,7 +37,7 @@ const colors: { [key: string]: any } = {
 const fonts = {};
 
 const spacings = {
-  maxWidthContent: "1420px",
+  contentMaxWidth: "1420px",
 };
 
 const size = {
@@ -65,7 +65,7 @@ const breakpoints = {
 
 const utils = {
   borderRadius: "25px",
-  themeColorTransitionDuration: 0.2,
+  themeColorTransitionDuration: 0.5,
 };
 
 const theme = {

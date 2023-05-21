@@ -1,3 +1,5 @@
+import Hero from "@/components/library/organisms/hero";
+import GlowCards from "@/components/library/organisms/hero/GlowCards";
 import Head from "next/head";
 
 export default function Home() {
@@ -9,7 +11,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main style={{ flex: "1" }}>Main</main>
+      <main style={{ flex: "1" }}>
+        <Hero />
+        {/* <GlowCards /> */}
+      </main>
     </>
   );
 }

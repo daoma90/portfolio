@@ -1,26 +1,60 @@
-import React from "react";
+import { useInView } from "framer-motion";
+import React, { useEffect, useRef } from "react";
 import * as s from "./styles";
 
 const Footer = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  // useEffect(() => {
+  //   console.log("is in view", isInView);
+  //   if (isInView) {
+  //     const bubbles = document.querySelectorAll("#bubble");
+  //     console.log("bubbles", bubbles);
+  //     for (let i = 0; i < bubbles.length; i++) {
+  //       bubbles[i].style.animationPlaystate = "paused";
+  //     }
+  //   }
+  // }, [isInView]);
+
   return (
-    <s.Container>
-      <s.Bubbles>
-        {Array.from({ length: 150 }, (_, i) => {
-          return (
-            <s.Bubble
-              key={i}
-              style={{
-                "--size": `${2 + Math.random() * 10}rem`,
-                "--distance": `${6 + Math.random() * 10}rem`,
-                "--position": `${-5 + Math.random() * 110}%`,
-                "--time": `${2 + Math.random() * 4}s`,
-                "--delay": `${-1 * (2 + Math.random() * 2)}s`,
-              }}
-            ></s.Bubble>
-          );
-        })}
-        {/* <s.Bubble /> */}
-      </s.Bubbles>
+    <s.Container ref={ref}>
+      <s.BubblesBase>
+        <s.Bubbles>
+          {Array.from({ length: 80 }, (_, i) => {
+            return (
+              <s.Bubble
+                id="bubble"
+                key={i}
+                style={{
+                  "--size": `${10 + Math.random() * 8}rem`,
+                  "--distance": `${6 + Math.random() * 10}rem`,
+                  "--position": `${-5 + Math.random() * 110}%`,
+                  "--time": `${2 + Math.random() * 4}s`,
+                  "--delay": `${-1 * (2 + Math.random() * 2)}s`,
+                }}
+                pause={!isInView}
+              ></s.Bubble>
+            );
+          })}
+        </s.Bubbles>
+      </s.BubblesBase>
+      {/* <s.Bubbles2>
+          {Array.from({ length: 10 }, (_, i) => {
+            return (
+              <s.Bubble2
+                key={i}
+                style={{
+                  "--size": `${20 + Math.random() * 10}rem`,
+                  "--distance": `${6 + Math.random() * 10}rem`,
+                  "--position": `${-5 + Math.random() * 110}%`,
+                  "--time": `${2 + Math.random() * 4}s`,
+                  "--delay": `${-1 * (2 + Math.random() * 2)}s`,
+                }}
+              ></s.Bubble2>
+            );
+          })}
+        </s.Bubbles2> */}
       <svg style={{ position: "fixed", top: "100vh" }}>
         <defs>
           <filter id="blob">
@@ -30,6 +64,19 @@ const Footer = () => {
               mode="matrix"
               values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
               result="blob"
+            ></feColorMatrix>
+          </filter>
+        </defs>
+      </svg>
+      <svg style={{ position: "fixed", top: "100vh" }}>
+        <defs>
+          <filter id="blob2">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+              result="blob2"
             ></feColorMatrix>
           </filter>
         </defs>

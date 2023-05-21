@@ -29,15 +29,15 @@ export const Dot = styled(m.div)`
   background-color: #ffffff;
   border-radius: 100%;
   transform: translate(-50%, -50%);
-  z-index: 999;
+  z-index: 998;
   pointer-events: none;
   backdrop-filter: grayscale(1);
   mix-blend-mode: difference;
 `;
 
 export const IconContainer = styled(m.div)`
-  width: 100%;
   height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

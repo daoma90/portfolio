@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { m } from "framer-motion";
 
 export const Container = styled.div`
-  /* height: 80px; */
   width: 100%;
   position: fixed;
   display: flex;

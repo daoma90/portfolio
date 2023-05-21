@@ -1,8 +1,13 @@
 import styled from "styled-components";
 import { m } from "framer-motion";
-import { norican, sourceCodePro, sourceSerifPro400 } from "@/theme/fonts";
+import { norican, sourceCodePro, sourceSerifPro800 } from "@/theme/fonts";
 
-export const HeroText = styled(m.h1)``;
+export const HeroText = styled(m.h1)`
+  ${sourceSerifPro800}
+  color: ${(props) => props.theme.colors.textPrimary};
+  font-size: 128px;
+  margin: 0;
+`;
 
 export const HeaderNavLink = styled(m.p)`
   ${sourceCodePro.style}
