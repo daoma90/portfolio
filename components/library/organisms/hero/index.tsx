@@ -80,7 +80,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0 }}
           >
-            <HeroText>I'm David.</HeroText>
+            <HeroText>I&apos;m David.</HeroText>
           </s.TextContainer>
           <s.Block
             initial={{ x: "-101%" }}
@@ -113,7 +113,7 @@ const Hero = () => {
           />
         </>
       </s.RowContainer>
-      <HeaderNavLink>(The site is under construction)</HeaderNavLink>
+      <HeaderNavLink>{"(The site is under construction)"}</HeaderNavLink>
     </s.Container>
   );
 };
