@@ -15,4 +15,5 @@ export default CustomLink;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  pointer-events: auto;
 `;

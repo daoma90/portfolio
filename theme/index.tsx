@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0;
-    transition: unset;
+    /* transition: unset; */
   }
 `;
 
@@ -38,29 +38,30 @@ const fonts = {};
 
 const spacings = {
   contentMaxWidth: "1420px",
+  padding: "2rem",
 };
 
 const size = {
-  mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "475px",
-  tablet: "768px",
-  laptop: "1025px",
-  laptopM: "1340px",
-  laptopL: "1440px",
-  desktop: "2560px",
+  mobileS: 320,
+  mobileM: 375,
+  mobileL: 475,
+  tablet: 768,
+  laptop: 1025,
+  laptopM: 1340,
+  laptopL: 1440,
+  desktop: 2560,
 };
 
 const breakpoints = {
-  mobileS: `@media (min-width: ${size.mobileS})`,
-  mobileM: `@media (min-width: ${size.mobileM})`,
-  mobileL: `@media (min-width: ${size.mobileL})`,
-  tablet: `@media (min-width: ${size.tablet})`,
-  laptop: `@media (min-width: ${size.laptop})`,
-  laptopM: `@media (min-width: ${size.laptopM})`,
-  laptopL: `@media (min-width: ${size.laptopL})`,
-  desktop: `@media(min-width: ${size.desktop})`,
-  desktopL: `@media (min-width: ${size.desktop})`,
+  mobileS: `@media (min-width: ${size.mobileS}px)`,
+  mobileM: `@media (min-width: ${size.mobileM}px)`,
+  mobileL: `@media (min-width: ${size.mobileL}px)`,
+  tablet: `@media (min-width: ${size.tablet}px)`,
+  laptop: `@media (min-width: ${size.laptop}px)`,
+  laptopM: `@media (min-width: ${size.laptopM}px)`,
+  laptopL: `@media (min-width: ${size.laptopL}px)`,
+  desktop: `@media(min-width: ${size.desktop}px)`,
+  desktopL: `@media (min-width: ${size.desktop}px)`,
 };
 
 const utils = {
@@ -86,4 +87,4 @@ const Theme: FC<ThemeProps> = ({ children, themeString }) => (
   </ThemeProvider>
 );
 
-export { Theme, GlobalStyle, breakpoints, lightColors, darkColors, colors, utils };
+export { Theme, GlobalStyle, breakpoints, size, lightColors, darkColors, colors, utils };

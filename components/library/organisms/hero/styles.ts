@@ -9,30 +9,31 @@ export const Container = styled.section`
   align-items: flex-start;
   gap: 3rem;
   max-width: ${(props) => props.theme.spacings.contentMaxWidth};
+  padding-left: ${(props) => props.theme.spacings.padding};
+  padding-right: ${(props) => props.theme.spacings.padding};
   margin: 0 auto;
+`;
+
+export const GreetingsRowContainer = styled.div`
+  height: clamp(60px, 11vw, 150px);
+  position: relative;
 `;
 
 export const GreetingsAnimationContainer = styled(m.div)`
   position: absolute;
-  width: 350px;
-  height: 150px;
+  width: clamp(135px, 25vw, 350px);
   overflow: hidden;
-`;
-
-export const GreetingsRowContainer = styled.div`
-  height: 150px;
-  position: relative;
+  height: 100%;
 `;
 
 export const RowContainer = styled.div`
-  height: 150px;
   position: relative;
-  width: max-content;
+  width: auto;
   overflow: hidden;
 `;
 
 export const TextContainer = styled(m.div)`
-  width: max-content;
+  width: auto;
 `;
 
 export const Block = styled(m.div)`
@@ -44,5 +45,6 @@ export const Block = styled(m.div)`
   background-color: ${(props) => props.theme.colors.primaryAccent};
   height: 100%;
   width: 100%;
+  /* height: clamp(50px, 10vw, 160px); */
   will-change: transform;
 `;

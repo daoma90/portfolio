@@ -37,7 +37,7 @@ const ThemeToggle = () => {
           animate={theme === "dark" && { stroke: colors[theme].secondaryAccent }}
           transition={{ duration: utils.themeColorTransitionDuration }}
         >
-          <IoMoonOutline size={20} />
+          <IoMoonOutline />
         </s.Icon>
       </s.ThemeItem>
       <s.ThemeItem
@@ -59,7 +59,7 @@ const ThemeToggle = () => {
           }
           transition={{ duration: utils.themeColorTransitionDuration }}
         >
-          <IoSunnyOutline size={20} />
+          <IoSunnyOutline />
         </s.Icon>
       </s.ThemeItem>
     </s.Container>
