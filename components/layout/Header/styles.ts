@@ -57,6 +57,7 @@ export const MobileMenuContainer = styled.div<{ show: boolean }>`
   background-color: ${(props) => props.theme.colors.background};
   transform: ${(props) => (props.show ? "translate(0)" : "translate(100%)")};
   transition: transform 0.5s cubic-bezier(0.7, 0, 0, 1);
+  pointer-events: auto;
 `;
 
 export const MobileHeaderContainer = styled.div`
@@ -71,6 +72,7 @@ export const MobileHeaderContainer = styled.div`
   left: 0;
   right: 0;
   z-index: 5;
+  pointer-events: auto;
 `;
 
 export const MenuContentContainer = styled.div`
@@ -80,7 +82,8 @@ export const MenuContentContainer = styled.div`
   align-items: center;
   justify-content: flex-end;
   margin-top: 20%;
-  gap: 15rem;
+  gap: 8rem;
+  padding: 4rem;
 `;
 
 export const MenuButtonContainer = styled.div`
