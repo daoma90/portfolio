@@ -3,8 +3,7 @@ import { m } from "framer-motion";
 import styled from "styled-components";
 
 export const Container = styled.section`
-  height: 100%;
-  min-height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,11 +12,13 @@ export const Container = styled.section`
   max-width: ${(props) => props.theme.spacings.contentMaxWidth};
   padding-left: ${(props) => props.theme.spacings.padding};
   padding-right: ${(props) => props.theme.spacings.padding};
-  padding-top: 5rem;
+  padding-top: 20vh;
   margin: 0 auto;
 
   ${breakpoints.laptop} {
     min-height: auto;
+    height: 100vh;
+    padding-top: 0;
   }
 `;
 
