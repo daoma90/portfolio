@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { m } from "framer-motion";
+import { breakpoints } from "@/theme";
 
 export const Ring = styled(m.div)`
   position: fixed;
@@ -15,9 +16,13 @@ export const Ring = styled(m.div)`
   will-change: width, height, transform, border;
   z-index: 999;
   pointer-events: none;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
+
+  ${breakpoints.tablet} {
+    display: flex;
+  }
 `;
 
 export const Dot = styled(m.div)`
@@ -33,6 +38,10 @@ export const Dot = styled(m.div)`
   pointer-events: none;
   backdrop-filter: grayscale(1);
   mix-blend-mode: difference;
+  display: none;
+  ${breakpoints.tablet} {
+    display: initial;
+  }
 `;
 
 export const IconContainer = styled(m.div)`

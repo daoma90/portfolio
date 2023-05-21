@@ -1,3 +1,4 @@
+import { size } from "@/theme";
 import { useInView } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import * as s from "./styles";
@@ -6,22 +7,11 @@ const Footer = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
-  // useEffect(() => {
-  //   console.log("is in view", isInView);
-  //   if (isInView) {
-  //     const bubbles = document.querySelectorAll("#bubble");
-  //     console.log("bubbles", bubbles);
-  //     for (let i = 0; i < bubbles.length; i++) {
-  //       bubbles[i].style.animationPlaystate = "paused";
-  //     }
-  //   }
-  // }, [isInView]);
-
   return (
     <s.Container ref={ref}>
       <s.BubblesBase>
         <s.Bubbles>
-          {Array.from({ length: 80 }, (_, i) => {
+          {Array.from({ length: window.innerWidth > size.tablet ? 80 : 20 }, (_, i) => {
             return (
               <s.Bubble
                 id="bubble"

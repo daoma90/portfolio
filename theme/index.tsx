@@ -1,14 +1,39 @@
 import { FC } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 
+const size = {
+  mobileS: 320,
+  mobileM: 375,
+  mobileL: 475,
+  tablet: 768,
+  laptop: 1025,
+  laptopM: 1340,
+  laptopL: 1440,
+  desktop: 2560,
+};
+
+const breakpoints = {
+  mobileS: `@media (min-width: ${size.mobileS}px)`,
+  mobileM: `@media (min-width: ${size.mobileM}px)`,
+  mobileL: `@media (min-width: ${size.mobileL}px)`,
+  tablet: `@media (min-width: ${size.tablet}px)`,
+  laptop: `@media (min-width: ${size.laptop}px)`,
+  laptopM: `@media (min-width: ${size.laptopM}px)`,
+  laptopL: `@media (min-width: ${size.laptopL}px)`,
+  desktop: `@media(min-width: ${size.desktop}px)`,
+  desktopL: `@media (min-width: ${size.desktop}px)`,
+};
+
 const GlobalStyle = createGlobalStyle`
   * {
     transition: inherit;
-    cursor: none;
+    cursor: auto;
+    ${breakpoints.tablet} {
+      cursor: none;
+    }
   }
   body {
     margin: 0;
-    /* transition: unset; */
   }
 `;
 
@@ -39,29 +64,6 @@ const fonts = {};
 const spacings = {
   contentMaxWidth: "1420px",
   padding: "2rem",
-};
-
-const size = {
-  mobileS: 320,
-  mobileM: 375,
-  mobileL: 475,
-  tablet: 768,
-  laptop: 1025,
-  laptopM: 1340,
-  laptopL: 1440,
-  desktop: 2560,
-};
-
-const breakpoints = {
-  mobileS: `@media (min-width: ${size.mobileS}px)`,
-  mobileM: `@media (min-width: ${size.mobileM}px)`,
-  mobileL: `@media (min-width: ${size.mobileL}px)`,
-  tablet: `@media (min-width: ${size.tablet}px)`,
-  laptop: `@media (min-width: ${size.laptop}px)`,
-  laptopM: `@media (min-width: ${size.laptopM}px)`,
-  laptopL: `@media (min-width: ${size.laptopL}px)`,
-  desktop: `@media(min-width: ${size.desktop}px)`,
-  desktopL: `@media (min-width: ${size.desktop}px)`,
 };
 
 const utils = {
