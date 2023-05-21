@@ -4,6 +4,7 @@ import { MouseProvider } from "@/context/MouseContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { LazyMotion, domMax } from "framer-motion";
 import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -13,6 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <MenuProvider>
             <Layout>
               <Component {...pageProps} />
+              <Analytics />
             </Layout>
           </MenuProvider>
         </MouseProvider>
