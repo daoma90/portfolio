@@ -32,7 +32,8 @@ export const Bubble = styled.div<{ style: any; pause: boolean }>`
   height: 50px;
   width: 50px;
   position: absolute;
-  background: ${(props) => props.theme.colors.bubbles};
+  border: 30px solid ${(props) => props.theme.colors.bubbles};
+  /* background-color: ${(props) => props.theme.colors.bubbles}; */
   border-radius: 100%;
   transform: translate(-50%, 100%);
   left: var(--position);

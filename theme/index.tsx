@@ -51,7 +51,7 @@ const darkColors: { [key: string]: any } = {
   secondaryAccent: "#000000",
   textPrimary: "#FFFFFF",
   cursor: "#646464",
-  bubbles: "#3d3d3d",
+  bubbles: "#FFFFFF",
 };
 
 const colors: { [key: string]: any } = {

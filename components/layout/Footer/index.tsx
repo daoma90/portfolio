@@ -11,7 +11,7 @@ const Footer = () => {
     <s.Container ref={ref}>
       <s.BubblesBase>
         <s.Bubbles>
-          {Array.from({ length: window.innerWidth > size.tablet ? 80 : 20 }, (_, i) => {
+          {Array.from({ length: window.innerWidth > size.tablet ? 80 : 10 }, (_, i) => {
             return (
               <s.Bubble
                 id="bubble"

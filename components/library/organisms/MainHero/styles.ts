@@ -29,7 +29,7 @@ export const GreetingsRowContainer = styled.div`
 
 export const GreetingsAnimationContainer = styled(m.div)`
   position: absolute;
-  width: clamp(135px, 25vw, 350px);
+  width: clamp(150px, 25vw, 350px);
   overflow: hidden;
   height: 100%;
 `;
