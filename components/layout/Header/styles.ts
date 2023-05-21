@@ -82,8 +82,10 @@ export const MenuContentContainer = styled.div`
   align-items: center;
   justify-content: flex-end;
   margin-top: 20%;
-  gap: 8rem;
+  gap: 15vh;
   padding: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 `;
 
 export const MenuButtonContainer = styled.div`

@@ -1,8 +1,10 @@
+import { breakpoints } from "@/theme";
 import { m } from "framer-motion";
 import styled from "styled-components";
 
 export const Container = styled.section`
-  height: 80vh;
+  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +13,12 @@ export const Container = styled.section`
   max-width: ${(props) => props.theme.spacings.contentMaxWidth};
   padding-left: ${(props) => props.theme.spacings.padding};
   padding-right: ${(props) => props.theme.spacings.padding};
+  padding-top: 5rem;
   margin: 0 auto;
+
+  ${breakpoints.laptop} {
+    min-height: auto;
+  }
 `;
 
 export const GreetingsRowContainer = styled.div`
