@@ -1,11 +1,27 @@
 import { size } from "@/theme";
 import { useInView } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as s from "./styles";
+import { isFirefox } from "react-device-detect";
 
 const Footer = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.4 });
+  const [bubbleCount, setBubbleCount] = useState<number>(0);
+
+  useEffect(() => {
+    if (window.innerWidth > size.laptop) {
+      if (isFirefox) {
+        setBubbleCount(70);
+      } else {
+        setBubbleCount(100);
+      }
+    } else if (window.innerWidth > size.tablet) {
+      setBubbleCount(30);
+    } else {
+      setBubbleCount(10);
+    }
+  }, []);
 
   return (
     <s.Container ref={ref}>
@@ -13,8 +29,7 @@ const Footer = () => {
         <s.Bubbles>
           {Array.from(
             {
-              length:
-                window.innerWidth > size.laptop ? 70 : window.innerWidth > size.tablet ? 30 : 10,
+              length: bubbleCount,
             },
             (_, i) => {
               return (
