@@ -5,28 +5,34 @@ import * as s from "./styles";
 
 const Footer = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { amount: 0.4 });
 
   return (
     <s.Container ref={ref}>
       <s.BubblesBase>
         <s.Bubbles>
-          {Array.from({ length: window.innerWidth > size.tablet ? 80 : 10 }, (_, i) => {
-            return (
-              <s.Bubble
-                id="bubble"
-                key={i}
-                style={{
-                  "--size": `${10 + Math.random() * 8}rem`,
-                  "--distance": `${6 + Math.random() * 10}rem`,
-                  "--position": `${-5 + Math.random() * 110}%`,
-                  "--time": `${2 + Math.random() * 4}s`,
-                  "--delay": `${-1 * (2 + Math.random() * 2)}s`,
-                }}
-                pause={!isInView}
-              ></s.Bubble>
-            );
-          })}
+          {Array.from(
+            {
+              length:
+                window.innerWidth > size.laptop ? 70 : window.innerWidth > size.tablet ? 30 : 10,
+            },
+            (_, i) => {
+              return (
+                <s.Bubble
+                  id="bubble"
+                  key={i}
+                  style={{
+                    "--size": `${8 + Math.random() * 8}rem`,
+                    "--distance": `${2 + Math.random() * 10}rem`,
+                    "--position": `${-5 + Math.random() * 110}%`,
+                    "--time": `${2 + Math.random() * 4}s`,
+                    "--delay": `${-1 * (2 + Math.random() * 2)}s`,
+                  }}
+                  pause={!isInView}
+                ></s.Bubble>
+              );
+            }
+          )}
         </s.Bubbles>
       </s.BubblesBase>
       {/* <s.Bubbles2>

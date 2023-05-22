@@ -49,20 +49,18 @@ export const Icon = styled(m.div)`
   }
 `;
 
-export const IndicatorContainer = styled.div<{ justify: string }>`
+export const IndicatorContainer = styled.div`
   position: absolute;
   top: -1px;
   bottom: -1px;
   right: -1px;
   left: -1px;
-  display: flex;
-  justify-content: ${(props) => props.justify};
   pointer-events: none;
 `;
 
 export const Indicator = styled(m.div)`
   height: 100%;
-  aspect-ratio: 1/1;
+  width: 50%;
   border-radius: 100%;
   background-color: ${(props) => props.theme.colors.primaryAccent};
   transition: unset;

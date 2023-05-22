@@ -7,6 +7,7 @@ const BurgerButton = () => {
   return (
     <s.BurgerContainer>
       <s.Button
+        aria-label="Toggle menu"
         onClick={() => {
           if (menuIsOpen) {
             handleCloseMenu();

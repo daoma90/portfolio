@@ -11,19 +11,19 @@ const ThemeToggle = () => {
 
   return (
     <s.Container>
-      <s.IndicatorContainer justify={theme == "dark" ? "flex-start" : "flex-end"}>
+      <s.IndicatorContainer>
         <s.Indicator
-          layout
-          initial={{ backgroundColor: colors[theme].primaryAccent }}
+          initial={{ backgroundColor: colors[theme].primaryAccent, x: 0 }}
           animate={
             theme == "dark"
-              ? { backgroundColor: colors[theme].primaryAccent }
-              : { backgroundColor: colors[theme].primaryAccent }
+              ? { backgroundColor: colors[theme].primaryAccent, x: 0 }
+              : { backgroundColor: colors[theme].primaryAccent, x: "98%" }
           }
           transition={{ duration: utils.themeColorTransitionDuration }}
         />
       </s.IndicatorContainer>
       <s.ThemeItem
+        aria-label="Toggle dark mode"
         onClick={setDarkTheme}
         onMouseEnter={() => {
           if (theme !== "dark") {
@@ -41,6 +41,7 @@ const ThemeToggle = () => {
         </s.Icon>
       </s.ThemeItem>
       <s.ThemeItem
+        aria-label="Toggle light mode"
         onClick={setLightTheme}
         onMouseEnter={() => {
           if (theme !== "light") {
