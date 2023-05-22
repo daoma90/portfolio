@@ -1,6 +1,5 @@
 import { useMouseContext } from "@/context/MouseContext";
 import { useThemeContext } from "@/context/ThemeContext";
-import useMousePosition from "@/hooks/useMousePosition";
 import { colors } from "@/theme";
 import React, { useEffect } from "react";
 import * as s from "./styles";
@@ -8,14 +7,30 @@ import { IoArrowForward, IoMoonOutline, IoSunnyOutline, IoHomeOutline } from "re
 import Image from "next/image";
 
 const CustomCursor = () => {
-  const { x, y } = useMousePosition();
   const { cursorType } = useMouseContext();
   const { theme } = useThemeContext();
+
+  useEffect(() => {
+    const mouseRing = document.getElementById("mouseRing") as HTMLElement;
+    const mouseDot = document.getElementById("mouseDot") as HTMLElement;
+    const mouseMoveHandler = (event: MouseEvent) => {
+      const { clientX, clientY } = event;
+      mouseRing.style.left = `${clientX}px`;
+      mouseRing.style.top = `${clientY}px`;
+      mouseDot.style.left = `${clientX}px`;
+      mouseDot.style.top = `${clientY}px`;
+    };
+    document.addEventListener("mousemove", mouseMoveHandler);
+
+    return () => {
+      document.removeEventListener("mousemove", mouseMoveHandler);
+    };
+  }, []);
 
   return (
     <>
       <s.Ring
-        style={{ top: `${y}px`, left: `${x}px` }}
+        id="mouseRing"
         initial={{
           width: "25px",
           height: "25px",
@@ -69,7 +84,7 @@ const CustomCursor = () => {
       </s.Ring>
 
       <s.Dot
-        style={{ top: `${y}px`, left: `${x}px` }}
+        id="mouseDot"
         initial={{ scale: 1, x: "-50%", y: "-50%" }}
         animate={
           cursorType ? { scale: 5, x: "-50%", y: "-50%" } : { scale: 1, x: "-50%", y: "-50%" }
