@@ -58,7 +58,7 @@ const DesktopHeader = () => {
         <Logo />
         <s.Navigation>
           {renderHeaderLink("/", "<Home />", "link", 0)}
-          {renderHeaderLink("/about", "<About />", "construction", 1)}
+          {renderHeaderLink("/about", "<About />", "link", 1)}
           {renderHeaderLink("/contact", "<Contact />", "construction", 2)}
         </s.Navigation>
         <ThemeToggle />
