@@ -6,13 +6,9 @@ const GlowCards = () => {
   const [currentCard, setCurrentCard] = useState<number | null>(null);
 
   const handleSetCurrentCard = (index: number | null) => {
-    console.log("handle set current card", index);
     setCurrentCard(index);
   };
 
-  useEffect(() => {
-    console.log("current card", currentCard);
-  }, [currentCard]);
   return (
     <s.Container>
       <GlowCard
