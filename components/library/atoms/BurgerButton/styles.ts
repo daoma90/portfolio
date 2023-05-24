@@ -42,7 +42,7 @@ export const TopLine = styled.div<LineProps>`
 
 export const MiddleLine = styled.div<LineProps>`
   ${Line}
-  transform: ${(props) => (props.menuIsOpen ? "translateX(calc(-100vw + 160px))" : "")};
+  transform: ${(props) => (props.menuIsOpen ? "translateX(calc(-100vw + 180px))" : "")};
   position: absolute;
   background-color: ${(props) => props.theme.colors.primaryAccent};
 `;
