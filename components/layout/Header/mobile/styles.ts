@@ -18,19 +18,6 @@ export const Container = styled.header`
   }
 `;
 
-export const Header = styled(m.nav)`
-  width: 100%;
-  height: 60px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10rem;
-  background-color: transparent;
-  padding-left: ${(props) => props.theme.spacings.padding};
-  padding-right: ${(props) => props.theme.spacings.padding};
-`;
-
 export const Navigation = styled.div`
   display: flex;
   flex-direction: column;
@@ -60,7 +47,7 @@ export const MobileMenuContainer = styled.div<{ show: boolean }>`
   pointer-events: auto;
 `;
 
-export const MobileHeaderContainer = styled.div`
+export const MobileHeaderContainer = styled.div<{ menuIsOpen: boolean }>`
   height: 80px;
   display: flex;
   flex-direction: row;
@@ -68,6 +55,10 @@ export const MobileHeaderContainer = styled.div`
   align-items: center;
   padding-left: ${(props) => props.theme.spacings.padding};
   padding-right: ${(props) => props.theme.spacings.padding};
+  padding-right: ${(props) =>
+    props.menuIsOpen
+      ? `calc(${props.theme.spacings.padding} + 1rem)`
+      : props.theme.spacings.padding};
   position: absolute;
   left: 0;
   right: 0;
