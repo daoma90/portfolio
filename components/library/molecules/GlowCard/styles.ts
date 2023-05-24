@@ -20,7 +20,7 @@ export const CardContainer = styled(m.div)`
   min-height: 400px;
   position: relative;
   ${breakpoints.laptop} {
-    height: 50vh;
+    height: 40vh;
   }
 `;
 
