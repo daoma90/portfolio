@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { m } from "framer-motion";
 import { breakpoints } from "@/theme";
 
-export const Ring = styled(m.div)`
+export const Ring = styled(m.div)<{ cursorTransition: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -11,8 +11,9 @@ export const Ring = styled(m.div)`
   border: 2px solid ${(props) => props.theme.colors.cursor};
   border-radius: 100%;
   transform: translate(-50%, -50%);
-  transition: 100ms ease-out !important;
-  -webkit-transition: 100ms ease-out !important;
+  transition: ${(props) => (props.cursorTransition ? "100ms ease-out !important" : "unset")};
+  -webkit-transition: ${(props) =>
+    props.cursorTransition ? "100ms ease-out !important" : "unset"};
   will-change: width, height, transform, border;
   z-index: 999;
   pointer-events: none;
@@ -27,13 +28,13 @@ export const Ring = styled(m.div)`
 
 export const Dot = styled(m.div)`
   position: fixed;
-  top: 50%;
-  left: 50%;
+  /* top: 50%;
+  left: 50%; */
   width: 8px;
   height: 8px;
   background-color: #ffffff;
   border-radius: 100%;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   z-index: 998;
   pointer-events: none;
   backdrop-filter: grayscale(1);

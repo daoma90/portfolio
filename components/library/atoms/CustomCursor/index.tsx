@@ -1,16 +1,28 @@
 import { useMouseContext } from "@/context/MouseContext";
 import { useThemeContext } from "@/context/ThemeContext";
 import { colors } from "@/theme";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as s from "./styles";
 import { IoArrowForward, IoMoonOutline, IoSunnyOutline, IoHomeOutline } from "react-icons/io5";
 import Image from "next/image";
+import { isChrome, isFirefox, isMacOs, isSafari } from "react-device-detect";
 
 const CustomCursor = () => {
   const { cursorType } = useMouseContext();
   const { theme } = useThemeContext();
+  const [cursorTransition, setCursorTransition] = useState<boolean>(false);
 
   useEffect(() => {
+    if (isMacOs) {
+      if (isChrome || isSafari) {
+        setCursorTransition(false);
+      } else {
+        setCursorTransition(true);
+      }
+    } else {
+      setCursorTransition(true);
+    }
+
     const mouseRing = document.getElementById("mouseRing") as HTMLElement;
     const mouseDot = document.getElementById("mouseDot") as HTMLElement;
     const mouseMoveHandler = (event: MouseEvent) => {
@@ -31,6 +43,7 @@ const CustomCursor = () => {
     <>
       <s.Ring
         id="mouseRing"
+        cursorTransition={cursorTransition}
         initial={{
           width: "25px",
           height: "25px",
