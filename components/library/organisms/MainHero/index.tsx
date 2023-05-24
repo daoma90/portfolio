@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import React, { useState, useEffect } from "react";
-import { HeaderNavLink, HeroText } from "../../atoms/typography";
+import { BodyRegular, HeroText } from "../../atoms/typography";
 import * as s from "./styles";
 
 const greetings = [
@@ -113,7 +113,7 @@ const MainHero = () => {
           />
         </>
       </s.RowContainer>
-      <HeaderNavLink>{"(The site is under construction)"}</HeaderNavLink>
+      <BodyRegular>{"(The site is under construction)"}</BodyRegular>
     </s.Container>
   );
 };
