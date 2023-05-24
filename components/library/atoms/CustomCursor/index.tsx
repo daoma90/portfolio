@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import * as s from "./styles";
 import { IoArrowForward, IoMoonOutline, IoSunnyOutline, IoHomeOutline } from "react-icons/io5";
 import Image from "next/image";
-import { isChrome, isFirefox, isMacOs, isSafari } from "react-device-detect";
+import { isChrome, isMacOs, isSafari } from "react-device-detect";
 
 const CustomCursor = () => {
   const { cursorType } = useMouseContext();
@@ -54,7 +54,6 @@ const CustomCursor = () => {
         animate={
           cursorType
             ? {
-                // scale: 1.2,
                 width: "60px",
                 height: "60px",
                 backgroundColor: colors[theme].primaryAccent,
@@ -63,7 +62,6 @@ const CustomCursor = () => {
                 borderColor: "transparent",
               }
             : {
-                // scale: 1,
                 width: "25px",
                 height: "25px",
                 backgroundColor: "transparent",
