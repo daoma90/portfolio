@@ -27,9 +27,9 @@ const Header = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const renderHeaderLink = (href: string, label: string, hoverType: string) => {
+  const renderHeaderLink = (href: string, label: string, hoverType: string, index: number) => {
     return (
-      <div
+      <s.HeaderNavLinkContainer
         onMouseEnter={() => {
           if (router.asPath !== href) {
             cursorChangeHandler(hoverType);
@@ -39,12 +39,33 @@ const Header = () => {
       >
         {hoverType === "link" ? (
           <CustomLink link={href}>
-            <HeaderNavLink>{label}</HeaderNavLink>
+            <HeaderNavLink
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: index * 0.3 + 1, duration: 0 }}
+            >
+              {label}
+            </HeaderNavLink>
           </CustomLink>
         ) : (
-          <HeaderNavLink>{label}</HeaderNavLink>
+          <HeaderNavLink
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: index * 0.3 + 1, duration: 0 }}
+          >
+            {label}
+          </HeaderNavLink>
         )}
-      </div>
+        <s.Block
+          initial={{ x: "-101%" }}
+          animate={{ x: [null, "0%", "101%"] }}
+          transition={{
+            delay: index * 0.3 + 0.5,
+            duration: 1,
+            ease: [0.7, 0, 0, 1],
+          }}
+        />
+      </s.HeaderNavLinkContainer>
     );
   };
   return windowWidth > size.laptop ? (
@@ -52,9 +73,9 @@ const Header = () => {
       <s.Header>
         <Logo />
         <s.Navigation>
-          {renderHeaderLink("/", "<Home />", "link")}
-          {renderHeaderLink("/about", "<About />", "construction")}
-          {renderHeaderLink("/contact", "<Contact />", "construction")}
+          {renderHeaderLink("/", "<Home />", "link", 0)}
+          {renderHeaderLink("/about", "<About />", "construction", 1)}
+          {renderHeaderLink("/contact", "<Contact />", "construction", 2)}
         </s.Navigation>
         <ThemeToggle />
       </s.Header>
@@ -66,18 +87,18 @@ const Header = () => {
         <BurgerButton />
       </s.MobileHeaderContainer>
       <AnimatePresence>
-        {/* <s.MobileMenuBackground> */}
         <s.MobileMenuContainer show={menuIsOpen}>
           <s.MenuContentContainer>
-            <s.Navigation>
-              {renderHeaderLink("/", "<Home />", "link")}
-              {renderHeaderLink("/about", "<About />", "construction")}
-              {renderHeaderLink("/contact", "<Contact />", "construction")}
-            </s.Navigation>
+            {menuIsOpen && (
+              <s.Navigation>
+                {renderHeaderLink("/", "<Home />", "link", 0)}
+                {renderHeaderLink("/about", "<About />", "construction", 1)}
+                {renderHeaderLink("/contact", "<Contact />", "construction", 2)}
+              </s.Navigation>
+            )}
             <ThemeToggle />
           </s.MenuContentContainer>
         </s.MobileMenuContainer>
-        {/* </s.MobileMenuBackground> */}
       </AnimatePresence>
     </s.Container>
   );

@@ -93,3 +93,19 @@ export const MenuButtonContainer = styled.div`
   top: 0;
   right: 0;
 `;
+
+export const HeaderNavLinkContainer = styled(m.div)`
+  position: relative;
+  overflow: hidden;
+`;
+
+export const Block = styled(m.div)`
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  will-change: transform;
+  background-color: ${(props) => props.theme.colors.primaryAccent};
+  transition: unset;
+`;
