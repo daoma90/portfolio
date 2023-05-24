@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <main style={{ flex: "1" }}>
         <MainHero />
-        {/* <GlowCards /> */}
+        <GlowCards />
       </main>
     </>
   );
