@@ -98,9 +98,9 @@ const CustomCursor = () => {
 
       <s.Dot
         id="mouseDot"
-        initial={{ scale: 1, x: "-50%", y: "-50%" }}
+        initial={{ scale: 0.15, x: "-50%", y: "-50%" }}
         animate={
-          cursorType ? { scale: 5, x: "-50%", y: "-50%" } : { scale: 1, x: "-50%", y: "-50%" }
+          cursorType ? { scale: 1, x: "-50%", y: "-50%" } : { scale: 0.15, x: "-50%", y: "-50%" }
         }
         transition={{ type: "spring", damping: 5, stiffness: 100, mass: 1 }}
       />
