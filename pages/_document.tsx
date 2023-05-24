@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import Image from "next/image";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -26,7 +27,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head />
         <body>
-          <img
+          <Image
             alt="ignore"
             width="99999"
             height="99999"
@@ -34,6 +35,7 @@ export default class MyDocument extends Document {
               pointerEvents: "none",
               position: "absolute",
               top: "0",
+
               width: "99vw",
               height: "99vh",
               maxWidth: "99vw",

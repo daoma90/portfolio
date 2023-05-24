@@ -57,7 +57,7 @@ const GlowCard: FC<GlowCardProps> = ({
     } else {
       setHovered(false);
     }
-  }, [currentCard]);
+  }, [currentCard, index]);
 
   return (
     <s.Container ref={containerRef}>
@@ -105,7 +105,7 @@ const GlowCard: FC<GlowCardProps> = ({
               transition={{ duration: duration, delay: 0.2, ease: ease }}
             >
               {items.map((item, i) => (
-                <s.Skill>
+                <s.Skill key={`skill-card-${index}-skill-${i}`}>
                   <Icons icon={item.icon} size={item.iconSize || 25} color="primaryAccent" />
                   <BodyLarge>{item.title}</BodyLarge>
                 </s.Skill>
