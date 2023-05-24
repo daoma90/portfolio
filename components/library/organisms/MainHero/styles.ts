@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   height: auto;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,12 +14,14 @@ export const Container = styled.section`
   padding-left: ${(props) => props.theme.spacings.padding};
   padding-right: ${(props) => props.theme.spacings.padding};
   padding-top: 20vh;
+  padding-bottom: 20vh;
   margin: 0 auto;
 
   ${breakpoints.laptop} {
     min-height: auto;
     height: 100vh;
     padding-top: 0;
+    padding-bottom: 0;
   }
 `;
 
