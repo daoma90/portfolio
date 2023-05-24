@@ -10,6 +10,28 @@ export const HeroText = styled(m.h1)`
   margin: 0;
 `;
 
+export const H3 = styled(m.h3)`
+  ${sourceCodePro.style}
+  weight: 600;
+  color: ${(props) => props.theme.colors.textPrimary};
+  font-size: clamp(26px, 9vw, 48px);
+  margin: 0;
+`;
+
+export const BodyRegular = styled(m.p)`
+  ${sourceCodePro.style}
+  weight: 400;
+  color: ${(props) => props.theme.colors.textPrimary};
+  font-size: clamp(16px, 9vw, 16px);
+`;
+
+export const BodyLarge = styled(m.p)`
+  ${sourceCodePro.style}
+  weight: 400;
+  color: ${(props) => props.theme.colors.textPrimary};
+  font-size: clamp(18px, 9vw, 18px);
+`;
+
 export const HeaderNavLink = styled(m.p)`
   ${sourceCodePro.style}
   text-decoration: none;
