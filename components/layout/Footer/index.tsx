@@ -4,22 +4,30 @@ import React, { useEffect, useRef, useState } from "react";
 import * as s from "./styles";
 import { isFirefox } from "react-device-detect";
 
+interface AnimationSettings {
+  bubbleCount: number;
+  size: number;
+}
+
 const Footer = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.4 });
-  const [bubbleCount, setBubbleCount] = useState<number>(0);
+  const [animationSettings, setAnimationSettings] = useState<AnimationSettings>({
+    bubbleCount: 10,
+    size: 8,
+  });
 
   useEffect(() => {
     if (window.innerWidth > size.laptop) {
       if (isFirefox) {
-        setBubbleCount(70);
+        setAnimationSettings({ bubbleCount: 70, size: 20 });
       } else {
-        setBubbleCount(100);
+        setAnimationSettings({ bubbleCount: 150, size: 15 });
       }
     } else if (window.innerWidth > size.tablet) {
-      setBubbleCount(30);
+      setAnimationSettings({ bubbleCount: 30, size: 8 });
     } else {
-      setBubbleCount(10);
+      setAnimationSettings({ bubbleCount: 10, size: 15 });
     }
   }, []);
 
@@ -29,7 +37,7 @@ const Footer = () => {
         <s.Bubbles>
           {Array.from(
             {
-              length: bubbleCount,
+              length: animationSettings.bubbleCount,
             },
             (_, i) => {
               return (
@@ -37,7 +45,7 @@ const Footer = () => {
                   id="bubble"
                   key={i}
                   style={{
-                    "--size": `${8 + Math.random() * 8}rem`,
+                    "--size": `${animationSettings.size + Math.random() * 8}rem`,
                     "--distance": `${2 + Math.random() * 10}rem`,
                     "--position": `${-5 + Math.random() * 110}%`,
                     "--time": `${2 + Math.random() * 4}s`,
