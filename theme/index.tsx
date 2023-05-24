@@ -38,25 +38,31 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const lightColors: { [key: string]: any } = {
-  background: "#FFFFFF",
-  primaryAccent: "#000000",
-  secondaryAccent: "#FFFFFF",
-  textPrimary: "#000000",
-  cursor: "#000000",
-  bubbles: "#000000",
+  background: "#E8E4DE",
+  primaryAccent: "#242424",
+  secondaryAccent: "#E8E4DE",
+  textPrimary: "#242424",
+  cursor: "#242424",
+  bubbles: "#242424",
 };
 const darkColors: { [key: string]: any } = {
-  background: "#000000",
-  primaryAccent: "#FFFFFF",
-  secondaryAccent: "#000000",
-  textPrimary: "#FFFFFF",
+  background: "#242424",
+  primaryAccent: "#E8E4DE",
+  secondaryAccent: "#242424",
+  textPrimary: "#E8E4DE",
   cursor: "#646464",
-  bubbles: "#FFFFFF",
+  bubbles: "#E8E4DE",
+};
+const gradients: { [key: string]: any } = {
+  bluePurple: "to right bottom, #3BB2F6 0% 30%, #8D36F9 70% 100%",
+  orangeRed: "to right bottom, #EEA12D 0% 30%, #DF2A2A 70% 100%",
+  yellowGreen: "to right bottom, #E5E92A 0% 30%, #4CC123 70% 100%",
 };
 
 const colors: { [key: string]: any } = {
   dark: darkColors,
   light: lightColors,
+  gradients: gradients,
 };
 
 const fonts = {};
@@ -84,7 +90,13 @@ interface ThemeProps {
 }
 
 const Theme: FC<ThemeProps> = ({ children, themeString }) => (
-  <ThemeProvider theme={{ ...theme, colors: themeString == "light" ? lightColors : darkColors }}>
+  <ThemeProvider
+    theme={{
+      ...theme,
+      colors: themeString == "light" ? lightColors : darkColors,
+      gradients: gradients,
+    }}
+  >
     {children}
   </ThemeProvider>
 );
