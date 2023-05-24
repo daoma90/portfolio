@@ -42,7 +42,7 @@ const GlowCard: FC<GlowCardProps> = ({
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  }, [contentRef.current]);
+  }, []);
 
   const handlePress = () => {
     handleSetCurrentCard(index);
