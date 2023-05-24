@@ -30,8 +30,8 @@ export const Dot = styled(m.div)`
   position: fixed;
   /* top: 50%;
   left: 50%; */
-  width: 8px;
-  height: 8px;
+  width: 50px;
+  height: 50px;
   background-color: #ffffff;
   border-radius: 100%;
   /* transform: translate(-50%, -50%); */
