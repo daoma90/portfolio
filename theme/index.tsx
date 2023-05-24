@@ -75,6 +75,7 @@ const spacings = {
 const utils = {
   borderRadius: "25px",
   themeColorTransitionDuration: 0.5,
+  pageTransitionDuration: 1.5,
 };
 
 const theme = {
