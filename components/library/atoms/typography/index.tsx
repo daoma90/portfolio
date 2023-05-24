@@ -22,14 +22,14 @@ export const BodyRegular = styled(m.p)`
   ${sourceCodePro.style}
   weight: 400;
   color: ${(props) => props.theme.colors.textPrimary};
-  font-size: clamp(16px, 9vw, 16px);
+  font-size: 16px;
 `;
 
 export const BodyLarge = styled(m.p)`
   ${sourceCodePro.style}
   weight: 400;
   color: ${(props) => props.theme.colors.textPrimary};
-  font-size: clamp(18px, 9vw, 18px);
+  font-size: 18px;
 `;
 
 export const HeaderNavLink = styled(m.p)`
