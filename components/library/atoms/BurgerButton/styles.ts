@@ -30,7 +30,7 @@ const Line = `
 height: 2px;
   width: 35px;
   border-radius: 10px;
-  transition: all 0.5s cubic-bezier(.7,0,0,1);
+  transition: transform 0.6s cubic-bezier(.7,0,0,1);
 `;
 
 export const TopLine = styled.div<LineProps>`
