@@ -108,7 +108,7 @@ const MainHero = () => {
             transition={{
               delay: 1,
               duration: 2,
-              ease: [0.77, 0, 0.175, 1],
+              ease: [0.7, 0, 0, 1],
             }}
           />
         </>
