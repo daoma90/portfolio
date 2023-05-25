@@ -1,9 +1,10 @@
 import PageTransition from "@/components/library/atoms/PageTransition";
-import GlowCards from "@/components/library/organisms/GlowCards";
+import { HeroText } from "@/components/library/atoms/typography";
 import MainHero from "@/components/library/organisms/MainHero";
 import Head from "next/head";
 
 export default function Home() {
+  return null;
   return (
     <>
       <Head>
@@ -14,8 +15,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main style={{ flex: "1" }}>
-        <MainHero />
-        <GlowCards />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+          }}
+        >
+          <HeroText>About</HeroText>
+        </div>
       </main>
       <PageTransition />
     </>

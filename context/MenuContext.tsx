@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { createContext, FC, useContext, useState, ReactNode, useEffect } from "react";
 
 type MenuContextType = {
@@ -22,17 +23,13 @@ export const useMenuContext = () => {
 
 export const MenuProvider: FC<MenuProviderProps> = ({ children }) => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
-  const [windowWidth, setWindowWidth] = useState<number>();
+  const router = useRouter();
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-
-  //   };
-
-  //   window.addEventListener("resize", handleResize);
-
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
+  useEffect(() => {
+    if (router) {
+      setMenuIsOpen(false);
+    }
+  }, [router]);
 
   const handleOpenMenu = () => {
     setMenuIsOpen(true);

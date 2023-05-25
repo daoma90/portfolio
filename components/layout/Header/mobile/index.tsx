@@ -4,6 +4,7 @@ import Logo from "@/components/library/atoms/Logo";
 import { HeaderNavLink } from "@/components/library/atoms/typography";
 import { useMenuContext } from "@/context/MenuContext";
 import { useMouseContext } from "@/context/MouseContext";
+import { utils } from "@/theme";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import React from "react";
@@ -27,18 +28,30 @@ const MobileHeader = () => {
         {hoverType === "link" ? (
           <CustomLink link={href}>
             <HeaderNavLink
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: index * 0.3 + 0.6, duration: 0 }}
+              initial={{ opacity: 0, fontWeight: 400 }}
+              animate={{ opacity: 1, fontWeight: router.asPath === href ? 800 : 400 }}
+              transition={{
+                opacity: {
+                  delay: index * 0.3 + 0.6,
+                  duration: 0,
+                },
+                fontWeight: { duration: 0.5, delay: utils.pageTransitionDuration },
+              }}
             >
               {label}
             </HeaderNavLink>
           </CustomLink>
         ) : (
           <HeaderNavLink
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: index * 0.3 + 0.6, duration: 0 }}
+            initial={{ opacity: 0, fontWeight: 400 }}
+            animate={{ opacity: 1, fontWeight: router.asPath === href ? 800 : 400 }}
+            transition={{
+              opacity: {
+                delay: index * 0.3 + 0.6,
+                duration: 0,
+              },
+              fontWeight: { duration: 0.5, delay: utils.pageTransitionDuration },
+            }}
           >
             {label}
           </HeaderNavLink>

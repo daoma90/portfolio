@@ -1,3 +1,4 @@
+import { utils } from "@/theme";
 import { AnimatePresence } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { BodyRegular, HeroText } from "../../atoms/typography";
@@ -39,12 +40,12 @@ const MainHero = () => {
                 <s.TextContainer
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5, duration: 0 }}
+                  transition={{ delay: 0.5 + utils.pageTransitionDuration, duration: 0 }}
                   exit={{
                     opacity: 0,
                     transition: {
                       duration: 0,
-                      delay: 0.5,
+                      delay: 0.5 + utils.pageTransitionDuration,
                     },
                   }}
                 >
@@ -55,6 +56,7 @@ const MainHero = () => {
                   animate={{ x: [null, "0%", "101%"] }}
                   transition={{
                     duration: 1,
+                    delay: utils.pageTransitionDuration,
                     ease: [0.7, 0, 0, 1],
                   }}
                 />
@@ -78,7 +80,7 @@ const MainHero = () => {
           <s.TextContainer
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 0 }}
+            transition={{ delay: 1.5 + utils.pageTransitionDuration, duration: 0 }}
           >
             <HeroText>I&apos;m David.</HeroText>
           </s.TextContainer>
@@ -86,7 +88,7 @@ const MainHero = () => {
             initial={{ x: "-101%" }}
             animate={{ x: [null, "0%", "101%"] }}
             transition={{
-              delay: 0.5,
+              delay: 0.5 + utils.pageTransitionDuration,
               duration: 2,
               ease: [0.7, 0, 0, 1],
             }}
@@ -98,7 +100,7 @@ const MainHero = () => {
           <s.TextContainer
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 2, duration: 0 }}
+            transition={{ delay: 2 + utils.pageTransitionDuration, duration: 0 }}
           >
             <HeroText>A front-end developer.</HeroText>
           </s.TextContainer>
@@ -106,7 +108,7 @@ const MainHero = () => {
             initial={{ x: "-101%" }}
             animate={{ x: [null, "0%", "101%"] }}
             transition={{
-              delay: 1,
+              delay: 1 + utils.pageTransitionDuration,
               duration: 2,
               ease: [0.7, 0, 0, 1],
             }}

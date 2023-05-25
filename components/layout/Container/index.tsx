@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { sourceCodePro } from "@/theme/fonts";
 
 interface ContainerProps {
   children: React.ReactNode;
@@ -19,4 +18,5 @@ const StyledContainer = styled.div`
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
