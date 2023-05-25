@@ -13,7 +13,7 @@ export default function Home() {
         <meta name="keyword" content="portfolio, front-end, front end, developer" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main style={{ flex: "1", backgroundColor: "black" }}>
+      <main style={{ flex: "1" }}>
         <MainHero />
         <GlowCards />
       </main>

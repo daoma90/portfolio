@@ -34,7 +34,6 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0;
-    background-color: black;
   }
 `;
 
@@ -45,6 +44,7 @@ const lightColors: { [key: string]: any } = {
   textPrimary: "#242424",
   cursor: "#242424",
   bubbles: "#242424",
+  pageTransition: "#FFFFFF",
 };
 const darkColors: { [key: string]: any } = {
   background: "#242424",
@@ -53,6 +53,7 @@ const darkColors: { [key: string]: any } = {
   textPrimary: "#E8E4DE",
   cursor: "#646464",
   bubbles: "#E8E4DE",
+  pageTransition: "#000000",
 };
 const gradients: { [key: string]: any } = {
   bluePurple: "to right bottom, #3BB2F6 0% 30%, #8D36F9 70% 100%",
