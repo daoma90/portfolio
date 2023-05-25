@@ -1,3 +1,4 @@
+import PageTransition from "@/components/layout/PageTransition";
 import MainHero from "@/components/library/organisms/MainHero";
 import Head from "next/head";
 
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
       <main style={{ flex: "1" }}>
         <MainHero />
+        <PageTransition />
       </main>
     </>
   );

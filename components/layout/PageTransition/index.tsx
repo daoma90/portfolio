@@ -1,20 +1,24 @@
 import { utils } from "@/theme";
-import { m } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import React, { FC } from "react";
 import styled from "styled-components";
 
-interface PageTransitionProps {
-  children: React.ReactNode;
-}
+interface PageTransitionProps {}
 
-const PageTransition: FC<PageTransitionProps> = ({ children }) => {
+const PageTransition: FC<PageTransitionProps> = ({}) => {
   return (
     <>
-      {children}
       <PageEnter
-        initial={{ x: "-100%" }}
-        animate={{ x: [null, "0%", "0%", "100%"] }}
+        initial={{ x: "0%" }}
+        animate={{ x: "100%" }}
         transition={{ duration: utils.pageTransitionDuration, ease: [0.7, 0, 0, 1] }}
+      />
+      <PageExit
+        initial={{ x: "-100%" }}
+        animate={{ x: "-99%" }}
+        exit={{ x: "0%" }}
+        transition={{ duration: utils.pageTransitionDuration, ease: [0.7, 0, 0, 1] }}
+        key="page-exit"
       />
     </>
   );
@@ -30,4 +34,15 @@ const PageEnter = styled(m.div)`
   right: 0;
   z-index: 999;
   background-color: ${(props) => props.theme.colors.primaryAccent};
+`;
+
+const PageExit = styled(m.div)`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: ${(props) => props.theme.colors.primaryAccent};
+  background-color: red;
 `;

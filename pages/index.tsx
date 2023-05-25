@@ -1,5 +1,7 @@
+import PageTransition from "@/components/layout/PageTransition";
 import GlowCards from "@/components/library/organisms/GlowCards";
 import MainHero from "@/components/library/organisms/MainHero";
+import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
 
 export default function Home() {
@@ -13,8 +15,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main style={{ flex: "1" }}>
-        <MainHero />
-        <GlowCards />
+        <AnimatePresence>
+          <MainHero />
+          <GlowCards />
+          <PageTransition />
+        </AnimatePresence>
       </main>
     </>
   );

@@ -12,7 +12,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
       <ThemeProvider>
         <MouseProvider>
           <MenuProvider>
-            <Layout pathname={router.pathname}>
+            <Layout>
               <Component {...pageProps} key={router.pathname} />
               <Analytics />
             </Layout>
