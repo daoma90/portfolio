@@ -34,6 +34,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0;
+    background-color: black;
   }
 `;
 
@@ -75,7 +76,7 @@ const spacings = {
 const utils = {
   borderRadius: "25px",
   themeColorTransitionDuration: 0.5,
-  pageTransitionDuration: 1.5,
+  pageTransitionDuration: 0.5,
 };
 
 const theme = {

@@ -1,7 +1,6 @@
-import PageTransition from "@/components/layout/PageTransition";
+import PageTransition from "@/components/library/atoms/PageTransition";
 import GlowCards from "@/components/library/organisms/GlowCards";
 import MainHero from "@/components/library/organisms/MainHero";
-import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
 
 export default function Home() {
@@ -14,13 +13,11 @@ export default function Home() {
         <meta name="keyword" content="portfolio, front-end, front end, developer" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main style={{ flex: "1" }}>
-        <AnimatePresence>
-          <MainHero />
-          <GlowCards />
-          <PageTransition />
-        </AnimatePresence>
+      <main style={{ flex: "1", backgroundColor: "black" }}>
+        <MainHero />
+        <GlowCards />
       </main>
+      <PageTransition />
     </>
   );
 }

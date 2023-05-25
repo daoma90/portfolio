@@ -1,4 +1,4 @@
-import PageTransition from "@/components/layout/PageTransition";
+import PageTransition from "@/components/library/atoms/PageTransition";
 import MainHero from "@/components/library/organisms/MainHero";
 import Head from "next/head";
 
