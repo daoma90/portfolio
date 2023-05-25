@@ -18,4 +18,5 @@ const StyledContainer = styled.div`
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
