@@ -10,8 +10,8 @@ export const BurgerContainer = styled.div`
 `;
 
 export const Button = styled.button`
-  height: 30px;
-  width: 30px;
+  height: 60px;
+  width: 60px;
   background-color: transparent;
   border: none;
   display: flex;
