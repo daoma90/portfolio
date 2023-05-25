@@ -15,7 +15,6 @@ const PageTransition: FC<PageTransitionProps> = ({}) => {
         animate={{ x: "100%" }}
         transition={{
           duration: utils.pageTransitionDuration,
-          // delay: utils.pageTransitionDuration,
           ease: [0.7, 0, 0, 1],
         }}
       />
@@ -39,7 +38,7 @@ const PageEnter = styled(m.div)`
   left: 0;
   right: 0;
   z-index: 999;
-  background-color: ${(props) => props.theme.colors.primaryAccent};
+  background-color: ${(props) => props.theme.colors.pageTransition};
 `;
 
 const PageExit = styled(m.div)`
@@ -49,5 +48,5 @@ const PageExit = styled(m.div)`
   left: 0;
   right: 0;
   z-index: 999;
-  background-color: ${(props) => props.theme.colors.primaryAccent};
+  background-color: ${(props) => props.theme.colors.pageTransition};
 `;
