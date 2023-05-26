@@ -1,4 +1,5 @@
-import { createContext, FC, useContext, useState, ReactNode } from "react";
+import { useRouter } from "next/dist/client/router";
+import { createContext, FC, useContext, useState, ReactNode, useEffect } from "react";
 
 type MouseContextType = {
   cursorType: string;
@@ -20,6 +21,14 @@ export const useMouseContext = () => {
 
 export const MouseProvider: FC<MouseProviderProps> = ({ children }) => {
   const [cursorType, setCursorType] = useState<string>("");
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router) {
+      setCursorType("");
+    }
+  }, [router]);
 
   const cursorChangeHandler = (cursorType: string) => {
     setCursorType(cursorType);

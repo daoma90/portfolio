@@ -5,6 +5,7 @@ import Container from "./Container";
 import { useThemeContext } from "@/context/ThemeContext";
 import CustomCursor from "../library/atoms/CustomCursor";
 import dynamic from "next/dynamic";
+import Splash from "./Splash";
 
 const DynamicFooter = dynamic(() => import("./Footer"), { ssr: false });
 
@@ -22,6 +23,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         {children}
         <DynamicFooter />
       </Container>
+      {/* <Splash /> */}
       <CustomCursor />
     </Theme>
   );

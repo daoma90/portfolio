@@ -1,3 +1,4 @@
+import PageTransition from "@/components/library/atoms/PageTransition";
 import GlowCards from "@/components/library/organisms/GlowCards";
 import MainHero from "@/components/library/organisms/MainHero";
 import Head from "next/head";
@@ -16,6 +17,7 @@ export default function Home() {
         <MainHero />
         <GlowCards />
       </main>
+      <PageTransition />
     </>
   );
 }

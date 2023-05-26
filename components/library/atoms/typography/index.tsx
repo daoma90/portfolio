@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { m } from "framer-motion";
-import { norican, sourceCodePro, sourceSerifPro800 } from "@/theme/fonts";
+import { norican, sourceCodePro, sourceSerifPro400, sourceSerifPro800 } from "@/theme/fonts";
 import { breakpoints } from "@/theme";
 
 export const HeroText = styled(m.h1)`
@@ -18,7 +18,7 @@ export const H2 = styled(m.h2)`
 `;
 
 export const H3 = styled(m.h3)`
-  ${sourceCodePro.style}
+  ${sourceSerifPro800.style}
   weight: 600;
   color: ${(props) => props.theme.colors.textPrimary};
   font-size: clamp(26px, 9vw, 48px);
