@@ -5,6 +5,7 @@ export const Container = styled.footer`
   position: relative;
   padding-top: 200px;
   overflow: hidden;
+  scroll-snap-align: start;
 `;
 
 export const BubblesBase = styled.div`

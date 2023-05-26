@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
     ${breakpoints.tablet} {
       cursor: none;
     }
+    margin:0;
   }
   body {
     margin: 0;

@@ -35,7 +35,7 @@ const DesktopHeader = () => {
           <HeaderNavLink
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 3, duration: 0 }}
+            transition={{ delay: 3.8, duration: 0 }}
           >
             {label}
           </HeaderNavLink>
@@ -44,9 +44,9 @@ const DesktopHeader = () => {
           initial={{ y: "-101%" }}
           animate={{ y: [null, "0%", "101%"] }}
           transition={{
-            delay: 2.5,
-            duration: 1.5,
-            ease: [0.3, 0, 0, 1],
+            delay: 3.5,
+            duration: 0.6,
+            ease: "linear",
           }}
         />
       </s.HeaderNavLinkContainer>

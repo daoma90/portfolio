@@ -10,6 +10,13 @@ export const HeroText = styled(m.h1)`
   margin: 0;
 `;
 
+export const H2 = styled(m.h2)`
+  ${sourceSerifPro800}
+  color: ${(props) => props.theme.colors.textPrimary};
+  font-size: clamp(25px, 9vw, 30px);
+  margin: 0;
+`;
+
 export const H3 = styled(m.h3)`
   ${sourceCodePro.style}
   weight: 600;

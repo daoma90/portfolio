@@ -58,22 +58,6 @@ const Footer = () => {
           )}
         </s.Bubbles>
       </s.BubblesBase>
-      {/* <s.Bubbles2>
-          {Array.from({ length: 10 }, (_, i) => {
-            return (
-              <s.Bubble2
-                key={i}
-                style={{
-                  "--size": `${20 + Math.random() * 10}rem`,
-                  "--distance": `${6 + Math.random() * 10}rem`,
-                  "--position": `${-5 + Math.random() * 110}%`,
-                  "--time": `${2 + Math.random() * 4}s`,
-                  "--delay": `${-1 * (2 + Math.random() * 2)}s`,
-                }}
-              ></s.Bubble2>
-            );
-          })}
-        </s.Bubbles2> */}
       <svg style={{ position: "fixed", top: "100vh" }}>
         <defs>
           <filter id="blob">

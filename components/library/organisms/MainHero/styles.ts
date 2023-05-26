@@ -16,7 +16,6 @@ export const Container = styled.section`
   padding-top: 20vh;
   padding-bottom: 20vh;
   margin: 0 auto;
-
   ${breakpoints.laptop} {
     min-height: auto;
     height: 100vh;

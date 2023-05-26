@@ -7,8 +7,7 @@ export const Container = styled(m.article)`
   position: relative;
   max-width: 400px;
   width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 4px;
 
   ${breakpoints.laptop} {
     max-width: 100%;
@@ -88,7 +87,11 @@ export const ContentContainer = styled(m.div)`
 
 export const TitleContainer = styled(m.div)``;
 
-export const SkillsContainer = styled(m.div)``;
+export const SkillsContainer = styled(m.div)`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
 
 export const Skill = styled.div`
   display: flex;

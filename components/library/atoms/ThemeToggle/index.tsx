@@ -24,7 +24,10 @@ const ThemeToggle = () => {
       </s.IndicatorContainer>
       <s.ThemeItem
         aria-label="Toggle dark mode"
-        onClick={setDarkTheme}
+        onClick={() => {
+          setDarkTheme();
+          cursorChangeHandler("");
+        }}
         onMouseEnter={() => {
           if (theme !== "dark") {
             cursorChangeHandler("dark");
@@ -42,7 +45,10 @@ const ThemeToggle = () => {
       </s.ThemeItem>
       <s.ThemeItem
         aria-label="Toggle light mode"
-        onClick={setLightTheme}
+        onClick={() => {
+          setLightTheme();
+          cursorChangeHandler("");
+        }}
         onMouseEnter={() => {
           if (theme !== "light") {
             cursorChangeHandler("light");

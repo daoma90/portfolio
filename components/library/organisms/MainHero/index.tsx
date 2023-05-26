@@ -18,16 +18,31 @@ const greetings = [
 
 const MainHero = () => {
   const [currentGreeting, setCurrentGreeting] = useState<number>(0);
+  const [siteVisible, setSiteVisible] = useState<boolean>(true);
+
+  // useEffect(() => {
+  //   const onChange = (e: Event) => {
+  //     if (document.visibilityState === "visible") {
+  //       setSiteVisible(true);
+  //     } else {
+  //       setSiteVisible(false);
+  //     }
+  //   };
+  //   document.addEventListener("visibilitychange", onChange);
+  //   return () => document.addEventListener("visibilitychange", onChange);
+  // }, []);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (currentGreeting === greetings.length - 1) {
-        setCurrentGreeting(0);
-      } else {
-        setCurrentGreeting(currentGreeting + 1);
-      }
-    }, 5000);
-  }, [currentGreeting]);
+    if (siteVisible) {
+      setTimeout(() => {
+        if (currentGreeting === greetings.length - 1) {
+          setCurrentGreeting(0);
+        } else {
+          setCurrentGreeting(currentGreeting + 1);
+        }
+      }, 5000);
+    }
+  }, [currentGreeting, siteVisible]);
 
   const renderRow = (text: string, index: number) => {
     return (
