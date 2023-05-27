@@ -17,11 +17,12 @@ const GlowCards = () => {
 
   return (
     <s.Container ref={ref}>
-      <TextReveal direction="x" blockDelay={1} blockDuration={1}>
+      <TextReveal inView={inView} direction="x" blockDelay={1} blockDuration={1}>
         <H2>What can I do?</H2>
       </TextReveal>
       <s.CardContainer>
         <GlowCard
+          inView={inView}
           gradient="bluePurple"
           header="Web"
           items={[
@@ -34,6 +35,7 @@ const GlowCards = () => {
           handleSetCurrentCard={handleSetCurrentCard}
         />
         <GlowCard
+          inView={inView}
           gradient="orangeRed"
           header="Mobile"
           items={[
@@ -45,6 +47,7 @@ const GlowCards = () => {
           handleSetCurrentCard={handleSetCurrentCard}
         />
         <GlowCard
+          inView={inView}
           gradient="yellowGreen"
           header="Design"
           items={[{ title: "Figma", icon: "figma", iconSize: 25 }]}
@@ -54,10 +57,10 @@ const GlowCards = () => {
         />
       </s.CardContainer>
       <s.Row>
-        <TextReveal direction="x" blockDelay={5} blockDuration={1}>
+        <TextReveal inView={inView} direction="x" blockDelay={5} blockDuration={1}>
           <BodyRegular>Is that it?</BodyRegular>
         </TextReveal>
-        <TextReveal direction="x" blockDelay={7} blockDuration={1}>
+        <TextReveal inView={inView} direction="x" blockDelay={7} blockDuration={1}>
           <BodyRegular>NO!</BodyRegular>
         </TextReveal>
       </s.Row>

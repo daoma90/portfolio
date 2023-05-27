@@ -8,6 +8,7 @@ interface TextRevealProps {
   blockDelay: number;
   blockDuration: number;
   textExit?: object;
+  inView?: boolean;
   containerStyle?: object;
 }
 
@@ -17,13 +18,14 @@ const TextReveal: FC<TextRevealProps> = ({
   blockDelay,
   blockDuration = 1,
   textExit,
+  inView = true,
   containerStyle,
 }) => {
   return (
     <s.Container containerStyle={{ ...containerStyle }}>
       <m.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={inView && { opacity: 1 }}
         transition={{ delay: blockDelay + blockDuration / 2, duration: 0 }}
         exit={textExit}
       >
@@ -31,7 +33,7 @@ const TextReveal: FC<TextRevealProps> = ({
       </m.div>
       <s.Block
         initial={{ [direction]: "-101%" }}
-        animate={{ [direction]: [null, "0%", "101%"] }}
+        animate={inView && { [direction]: [null, "0%", "101%"] }}
         transition={{ duration: blockDuration, delay: blockDelay, ease: [0.7, 0, 0, 1] }}
       />
     </s.Container>

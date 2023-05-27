@@ -11,6 +11,7 @@ interface GlowCardProps {
   index: number;
   currentCard: number | null;
   handleSetCurrentCard: (index: number | null) => void;
+  inView: boolean;
 }
 
 const duration = 0.5;
@@ -25,14 +26,12 @@ const GlowCard: FC<GlowCardProps> = ({
   index,
   currentCard,
   handleSetCurrentCard,
+  inView,
 }) => {
   const [hovered, setHovered] = useState<boolean>(false);
   const [contentHeight, setContentHeight] = useState<number>(260);
   const containerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const contentRef = useRef() as MutableRefObject<HTMLDivElement>;
-  const inView = useInView(containerRef, {
-    once: true,
-  });
 
   useEffect(() => {
     setContentHeight(contentRef.current.clientHeight);
