@@ -29,7 +29,7 @@ export const Card = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: ${(props) => props.theme.colors.secondaryAccent};
+  background-color: ${(props) => props.theme.colors.secondaryAccent};
   z-index: 2;
   border-radius: 20px;
   display: flex;

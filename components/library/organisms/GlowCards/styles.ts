@@ -13,6 +13,7 @@ export const Container = styled.section`
   padding-left: ${(props) => props.theme.spacings.padding};
   padding-right: ${(props) => props.theme.spacings.padding};
   gap: 3rem;
+  transition: background-color, color, background;
 `;
 
 export const TextContainer = styled(m.div)`

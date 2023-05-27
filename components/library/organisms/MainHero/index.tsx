@@ -84,56 +84,58 @@ const MainHero = () => {
   };
 
   return (
-    <s.Container>
-      <s.GreetingsRowContainer>
-        {greetings.map((item, index) => {
-          return renderRow(item, index);
-        })}
-      </s.GreetingsRowContainer>
-      <s.RowContainer>
-        <>
-          <s.TextContainer
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 + utils.pageTransitionDuration, duration: 0 }}
-          >
-            <HeroText>
-              I&apos;m <s.Name>David.</s.Name>
-            </HeroText>
-          </s.TextContainer>
-          <s.Block
-            initial={{ x: "-101%" }}
-            animate={{ x: [null, "0%", "101%"] }}
-            transition={{
-              delay: 0.5 + utils.pageTransitionDuration,
-              duration: 2,
-              ease: [0.7, 0, 0, 1],
-            }}
-          />
-        </>
-      </s.RowContainer>
-      <s.RowContainer>
-        <>
-          <s.TextContainer
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2 + utils.pageTransitionDuration, duration: 0 }}
-          >
-            <HeroText>A front-end developer.</HeroText>
-          </s.TextContainer>
-          <s.Block
-            initial={{ x: "-101%" }}
-            animate={{ x: [null, "0%", "101%"] }}
-            transition={{
-              delay: 1 + utils.pageTransitionDuration,
-              duration: 2,
-              ease: [0.7, 0, 0, 1],
-            }}
-          />
-        </>
-      </s.RowContainer>
-      <BodyRegular>{"(The site is under construction)"}</BodyRegular>
-    </s.Container>
+    <div className="section">
+      <s.Container>
+        <s.GreetingsRowContainer>
+          {greetings.map((item, index) => {
+            return renderRow(item, index);
+          })}
+        </s.GreetingsRowContainer>
+        <s.RowContainer>
+          <>
+            <s.TextContainer
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5 + utils.pageTransitionDuration, duration: 0 }}
+            >
+              <HeroText>
+                I&apos;m <s.Name>David.</s.Name>
+              </HeroText>
+            </s.TextContainer>
+            <s.Block
+              initial={{ x: "-101%" }}
+              animate={{ x: [null, "0%", "101%"] }}
+              transition={{
+                delay: 0.5 + utils.pageTransitionDuration,
+                duration: 2,
+                ease: [0.7, 0, 0, 1],
+              }}
+            />
+          </>
+        </s.RowContainer>
+        <s.RowContainer>
+          <>
+            <s.TextContainer
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 2 + utils.pageTransitionDuration, duration: 0 }}
+            >
+              <HeroText>A front-end developer.</HeroText>
+            </s.TextContainer>
+            <s.Block
+              initial={{ x: "-101%" }}
+              animate={{ x: [null, "0%", "101%"] }}
+              transition={{
+                delay: 1 + utils.pageTransitionDuration,
+                duration: 2,
+                ease: [0.7, 0, 0, 1],
+              }}
+            />
+          </>
+        </s.RowContainer>
+        <BodyRegular>{"(The site is under construction)"}</BodyRegular>
+      </s.Container>
+    </div>
   );
 };
 

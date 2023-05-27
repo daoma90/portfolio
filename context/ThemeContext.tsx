@@ -38,7 +38,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     if (document) {
       const body = document.querySelector("body");
       if (body) {
-        body.style.transition = `background-color ${utils.themeColorTransitionDuration}s linear, color ${utils.themeColorTransitionDuration}s linear`;
+        body.style.transition = `background-color, ${utils.themeColorTransitionDuration}s linear, color ${utils.themeColorTransitionDuration}s linear, background, ${utils.themeColorTransitionDuration}s linear`;
         setTimeout(() => {
           body.style.transition = "unset";
         }, 1000);
