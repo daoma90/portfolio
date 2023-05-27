@@ -8,7 +8,6 @@ export const Container = styled.section`
   align-items: flex-start;
   justify-content: center;
   min-height: 100vh;
-  width: 100%;
   margin: 0 auto;
   max-width: ${(props) => props.theme.spacings.contentMaxWidth};
   padding-left: ${(props) => props.theme.spacings.padding};
