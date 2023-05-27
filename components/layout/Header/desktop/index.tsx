@@ -28,7 +28,7 @@ const DesktopHeader = () => {
               initial={{ opacity: 0, fontWeight: 400 }}
               animate={{ opacity: 1, fontWeight: router.asPath === href ? 800 : 400 }}
               transition={{
-                opacity: { delay: 3, duration: 0 },
+                opacity: { delay: 3.9 + utils.pageTransitionDuration, duration: 0 },
                 fontWeight: { duration: 0.5, delay: utils.pageTransitionDuration },
               }}
             >
@@ -39,7 +39,7 @@ const DesktopHeader = () => {
           <HeaderNavLink
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 3.8, duration: 0 }}
+            transition={{ delay: 3.9 + utils.pageTransitionDuration, duration: 0 }}
           >
             {label}
           </HeaderNavLink>
@@ -48,7 +48,7 @@ const DesktopHeader = () => {
           initial={{ y: "-101%" }}
           animate={{ y: [null, "0%", "101%"] }}
           transition={{
-            delay: 3.5,
+            delay: 3.5 + utils.pageTransitionDuration,
             duration: 0.6,
             ease: "linear",
           }}
