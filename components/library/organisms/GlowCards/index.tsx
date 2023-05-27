@@ -1,6 +1,7 @@
 import { utils } from "@/theme";
 import { useInView } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import TextReveal from "../../atoms/TextReveal";
 import { BodyRegular, H2 } from "../../atoms/typography";
 import GlowCard from "../../molecules/GlowCard";
 import * as s from "./styles";
@@ -16,25 +17,9 @@ const GlowCards = () => {
 
   return (
     <s.Container ref={ref}>
-      <s.TextContainer>
-        <H2
-          initial={{ opacity: 0 }}
-          animate={inView && { opacity: 1 }}
-          transition={{ duration: 0, delay: 2.5 }}
-        >
-          What can I do?
-        </H2>
-        <s.Block
-          offset="-5px"
-          initial={{ x: "-101%" }}
-          animate={inView && { x: [null, "0%", "101%"] }}
-          transition={{
-            delay: 2,
-            duration: 1,
-            ease: [0.7, 0, 0, 1],
-          }}
-        />
-      </s.TextContainer>
+      <TextReveal direction="x" blockDelay={1} blockDuration={1}>
+        <H2>What can I do?</H2>
+      </TextReveal>
       <s.CardContainer>
         <GlowCard
           gradient="bluePurple"
@@ -51,7 +36,10 @@ const GlowCards = () => {
         <GlowCard
           gradient="orangeRed"
           header="Mobile"
-          items={[{ title: "React native", icon: "react", iconSize: 25 }]}
+          items={[
+            { title: "React native", icon: "react", iconSize: 25 },
+            { title: "Expo", icon: "expo", iconSize: 25 },
+          ]}
           index={1}
           currentCard={currentCard}
           handleSetCurrentCard={handleSetCurrentCard}
@@ -66,44 +54,12 @@ const GlowCards = () => {
         />
       </s.CardContainer>
       <s.Row>
-        <s.TextContainer>
-          <BodyRegular
-            initial={{ opacity: 0 }}
-            animate={inView && { opacity: 1 }}
-            transition={{ duration: 0, delay: 6.5 }}
-          >
-            Is that it?
-          </BodyRegular>
-          <s.Block
-            offset="-5px"
-            initial={{ x: "-101%" }}
-            animate={inView && { x: [null, "0%", "101%"] }}
-            transition={{
-              delay: 6,
-              duration: 1,
-              ease: [0.7, 0, 0, 1],
-            }}
-          />
-        </s.TextContainer>
-        <s.TextContainer>
-          <BodyRegular
-            initial={{ opacity: 0 }}
-            animate={inView && { opacity: 1 }}
-            transition={{ duration: 0, delay: 8.5 }}
-          >
-            NO!
-          </BodyRegular>
-          <s.Block
-            offset="-5px"
-            initial={{ x: "-101%" }}
-            animate={inView && { x: [null, "0%", "101%"] }}
-            transition={{
-              delay: 8,
-              duration: 1,
-              ease: [0.7, 0, 0, 1],
-            }}
-          />
-        </s.TextContainer>
+        <TextReveal direction="x" blockDelay={5} blockDuration={1}>
+          <BodyRegular>Is that it?</BodyRegular>
+        </TextReveal>
+        <TextReveal direction="x" blockDelay={7} blockDuration={1}>
+          <BodyRegular>NO!</BodyRegular>
+        </TextReveal>
       </s.Row>
     </s.Container>
   );

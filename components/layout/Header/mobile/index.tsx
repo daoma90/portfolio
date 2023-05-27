@@ -1,6 +1,7 @@
 import BurgerButton from "@/components/library/atoms/BurgerButton";
 import CustomLink from "@/components/library/atoms/CustomLink";
 import Logo from "@/components/library/atoms/Logo";
+import TextReveal from "@/components/library/atoms/TextReveal";
 import { HeaderNavLink } from "@/components/library/atoms/typography";
 import { useMenuContext } from "@/context/MenuContext";
 import { useMouseContext } from "@/context/MouseContext";
@@ -25,46 +26,15 @@ const MobileHeader = () => {
         }}
         onMouseLeave={() => cursorChangeHandler("")}
       >
-        {hoverType === "link" ? (
-          <CustomLink link={href}>
-            <HeaderNavLink
-              initial={{ opacity: 0, fontWeight: 400 }}
-              animate={{ opacity: 1, fontWeight: router.asPath === href ? 800 : 400 }}
-              transition={{
-                opacity: {
-                  delay: index * 0.3 + 0.6,
-                  duration: 0,
-                },
-                fontWeight: { duration: 0.5, delay: utils.pageTransitionDuration },
-              }}
-            >
-              {label}
-            </HeaderNavLink>
-          </CustomLink>
-        ) : (
-          <HeaderNavLink
-            initial={{ opacity: 0, fontWeight: 400 }}
-            animate={{ opacity: 1, fontWeight: router.asPath === href ? 800 : 400 }}
-            transition={{
-              opacity: {
-                delay: index * 0.3 + 0.6,
-                duration: 0,
-              },
-              fontWeight: { duration: 0.5, delay: utils.pageTransitionDuration },
-            }}
-          >
-            {label}
-          </HeaderNavLink>
-        )}
-        <s.Block
-          initial={{ x: "-101%" }}
-          animate={{ x: [null, "0%", "101%"] }}
-          transition={{
-            delay: index * 0.3 + 0.2,
-            duration: 1,
-            ease: [0.7, 0, 0, 1],
-          }}
-        />
+        <TextReveal direction="x" blockDelay={index * 0.3 + 0.2} blockDuration={1}>
+          {hoverType === "link" ? (
+            <CustomLink link={href}>
+              <HeaderNavLink>{label}</HeaderNavLink>
+            </CustomLink>
+          ) : (
+            <HeaderNavLink>{label}</HeaderNavLink>
+          )}
+        </TextReveal>
       </s.HeaderNavLinkContainer>
     );
   };

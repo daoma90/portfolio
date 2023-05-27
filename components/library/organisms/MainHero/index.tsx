@@ -1,6 +1,7 @@
 import { utils } from "@/theme";
 import { AnimatePresence } from "framer-motion";
 import React, { useState, useEffect } from "react";
+import TextReveal from "../../atoms/TextReveal";
 import { BodyRegular, HeroText } from "../../atoms/typography";
 import * as s from "./styles";
 
@@ -47,35 +48,25 @@ const MainHero = () => {
 
   const renderRow = (text: string, index: number) => {
     return (
-      <div key={index}>
-        <s.GreetingsAnimationContainer>
+      <div key={`greeting-${index}`}>
+        <s.GreetingsAnimationContainer index={index}>
           <AnimatePresence>
             {currentGreeting === index && (
-              <>
-                <s.TextContainer
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 + utils.pageTransitionDuration, duration: 0 }}
-                  exit={{
-                    opacity: 0,
-                    transition: {
-                      duration: 0,
-                      delay: 0.5 + utils.pageTransitionDuration,
-                    },
-                  }}
-                >
-                  <HeroText>{text}</HeroText>
-                </s.TextContainer>
-                <s.Block
-                  initial={{ x: "-101%" }}
-                  animate={{ x: [null, "0%", "101%"] }}
-                  transition={{
-                    duration: 1,
-                    delay: utils.pageTransitionDuration,
-                    ease: [0.7, 0, 0, 1],
-                  }}
-                />
-              </>
+              <TextReveal
+                containerStyle={{ width: "100%" }}
+                direction="x"
+                blockDelay={utils.pageTransitionDuration}
+                blockDuration={2}
+                textExit={{
+                  opacity: 0,
+                  transition: {
+                    duration: 0,
+                    delay: 0.6 + utils.pageTransitionDuration,
+                  },
+                }}
+              >
+                <HeroText>{text}</HeroText>
+              </TextReveal>
             )}
           </AnimatePresence>
         </s.GreetingsAnimationContainer>
@@ -91,46 +82,16 @@ const MainHero = () => {
         })}
       </s.GreetingsRowContainer>
       <s.RowContainer>
-        <>
-          <s.TextContainer
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 + utils.pageTransitionDuration, duration: 0 }}
-          >
-            <HeroText>
-              I&apos;m <s.Name>David.</s.Name>
-            </HeroText>
-          </s.TextContainer>
-          <s.Block
-            initial={{ x: "-101%" }}
-            animate={{ x: [null, "0%", "101%"] }}
-            transition={{
-              delay: 0.5 + utils.pageTransitionDuration,
-              duration: 2,
-              ease: [0.7, 0, 0, 1],
-            }}
-          />
-        </>
+        <TextReveal direction="x" blockDelay={0.5 + utils.pageTransitionDuration} blockDuration={2}>
+          <HeroText>
+            I&apos;m <s.Name>David.</s.Name>
+          </HeroText>
+        </TextReveal>
       </s.RowContainer>
       <s.RowContainer>
-        <>
-          <s.TextContainer
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2 + utils.pageTransitionDuration, duration: 0 }}
-          >
-            <HeroText>A front-end developer.</HeroText>
-          </s.TextContainer>
-          <s.Block
-            initial={{ x: "-101%" }}
-            animate={{ x: [null, "0%", "101%"] }}
-            transition={{
-              delay: 1 + utils.pageTransitionDuration,
-              duration: 2,
-              ease: [0.7, 0, 0, 1],
-            }}
-          />
-        </>
+        <TextReveal direction="x" blockDelay={1 + utils.pageTransitionDuration} blockDuration={2}>
+          <HeroText>A front-end developer.</HeroText>
+        </TextReveal>
       </s.RowContainer>
       <BodyRegular>{"(The site is under construction)"}</BodyRegular>
     </s.Container>

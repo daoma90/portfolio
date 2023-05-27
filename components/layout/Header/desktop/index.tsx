@@ -1,5 +1,6 @@
 import CustomLink from "@/components/library/atoms/CustomLink";
 import Logo from "@/components/library/atoms/Logo";
+import TextReveal from "@/components/library/atoms/TextReveal";
 import { HeaderNavLink } from "@/components/library/atoms/typography";
 import { useMouseContext } from "@/context/MouseContext";
 import { utils } from "@/theme";
@@ -22,37 +23,34 @@ const DesktopHeader = () => {
         }}
         onMouseLeave={() => cursorChangeHandler("")}
       >
-        {hoverType === "link" ? (
-          <CustomLink link={href}>
+        <TextReveal
+          direction="y"
+          blockDelay={3.5 + utils.pageTransitionDuration}
+          blockDuration={0.6}
+        >
+          {hoverType === "link" ? (
+            <CustomLink link={href}>
+              <HeaderNavLink
+                initial={{ fontWeight: 400 }}
+                animate={{ fontWeight: router.asPath === href ? 800 : 400 }}
+                transition={{
+                  duration: 0.5,
+                  delay: utils.pageTransitionDuration,
+                }}
+              >
+                {label}
+              </HeaderNavLink>
+            </CustomLink>
+          ) : (
             <HeaderNavLink
-              initial={{ opacity: 0, fontWeight: 400 }}
-              animate={{ opacity: 1, fontWeight: router.asPath === href ? 800 : 400 }}
-              transition={{
-                opacity: { delay: 3.9 + utils.pageTransitionDuration, duration: 0 },
-                fontWeight: { duration: 0.5, delay: utils.pageTransitionDuration },
-              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 3.9 + utils.pageTransitionDuration, duration: 0 }}
             >
               {label}
             </HeaderNavLink>
-          </CustomLink>
-        ) : (
-          <HeaderNavLink
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 3.9 + utils.pageTransitionDuration, duration: 0 }}
-          >
-            {label}
-          </HeaderNavLink>
-        )}
-        <s.Block
-          initial={{ y: "-101%" }}
-          animate={{ y: [null, "0%", "101%"] }}
-          transition={{
-            delay: 3.5 + utils.pageTransitionDuration,
-            duration: 0.6,
-            ease: "linear",
-          }}
-        />
+          )}
+        </TextReveal>
       </s.HeaderNavLinkContainer>
     );
   };
