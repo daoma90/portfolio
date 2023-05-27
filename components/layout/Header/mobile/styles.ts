@@ -55,10 +55,6 @@ export const MobileHeaderContainer = styled.div<{ menuIsOpen: boolean }>`
   align-items: center;
   padding-left: ${(props) => props.theme.spacings.padding};
   padding-right: ${(props) => props.theme.spacings.padding};
-  padding-right: ${(props) =>
-    props.menuIsOpen
-      ? `calc(${props.theme.spacings.padding} + 1rem)`
-      : props.theme.spacings.padding};
   position: absolute;
   left: 0;
   right: 0;
