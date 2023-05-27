@@ -97,7 +97,9 @@ const MainHero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 + utils.pageTransitionDuration, duration: 0 }}
           >
-            <HeroText>I&apos;m David.</HeroText>
+            <HeroText>
+              I&apos;m <s.Name>David.</s.Name>
+            </HeroText>
           </s.TextContainer>
           <s.Block
             initial={{ x: "-101%" }}
