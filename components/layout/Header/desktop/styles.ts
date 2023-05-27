@@ -48,7 +48,6 @@ export const HeaderNavLinkContainer = styled(m.div)`
   align-items: center;
   position: relative;
   overflow: hidden;
-  height: 40px;
 `;
 
 export const Block = styled(m.div)`

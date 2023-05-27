@@ -16,6 +16,7 @@ interface GlowCardProps {
 const duration = 0.5;
 const ease = [0.165, 0.84, 0.44, 1];
 const y = 100;
+const delay = 4;
 
 const GlowCard: FC<GlowCardProps> = ({
   gradient,
@@ -66,7 +67,7 @@ const GlowCard: FC<GlowCardProps> = ({
         onMouseLeave={() => setHovered(false)}
         initial={{ opacity: 0, y: 100 }}
         animate={inView && { opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.2 + 3 }}
+        transition={{ duration: 0.5, delay: index * 0.2 + delay }}
       >
         <s.Card onClick={handlePress}>
           <s.TitleContainer

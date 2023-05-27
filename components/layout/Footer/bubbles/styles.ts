@@ -33,7 +33,6 @@ export const Bubble = styled.div<{ style: any; pause: boolean }>`
   height: var(--size);
   width: var(--size);
   position: absolute;
-  /* border: 20px solid ${(props) => props.theme.colors.bubbles}; */
   background-color: ${(props) => props.theme.colors.bubbles};
   border-radius: 100%;
   transform: translate(-50%, 100%);
@@ -43,48 +42,6 @@ export const Bubble = styled.div<{ style: any; pause: boolean }>`
   animation: size var(--time) ease-in infinite var(--delay),
     move var(--time) ease-in infinite var(--delay);
   animation-play-state: ${(props) => (props.pause ? "paused" : "running")};
-  @keyframes size {
-    0% {
-      width: var(--size);
-      height: var(--size);
-    }
-    100% {
-      width: 0rem;
-      height: 0rem;
-    }
-  }
-  @keyframes move {
-    0% {
-      bottom: 0rem;
-    }
-    100% {
-      bottom: var(--distance);
-    }
-  }
-`;
-
-export const Bubbles2 = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1rem;
-  filter: url("#blob2");
-  background: ${(props) => props.theme.colors.bubbles};
-  z-index: 1;
-`;
-
-export const Bubble2 = styled.div<{ style: any }>`
-  height: 50px;
-  width: 50px;
-  position: absolute;
-  background: #70282f;
-  border-radius: 100%;
-  transform: translate(-50%, 100%);
-  left: var(--position);
-  z-index: 1;
-  animation: size var(--time) ease-in infinite var(--delay),
-    move var(--time) ease-in infinite var(--delay);
   @keyframes size {
     0% {
       width: var(--size);

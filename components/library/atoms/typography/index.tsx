@@ -46,9 +46,12 @@ export const HeaderNavLink = styled(m.p)`
   pointer-events: none;
   margin: 0;
   font-size: 2rem;
+  display: flex;
+  align-items: center;
 
   ${breakpoints.laptop} {
     font-size: 1rem;
+    height: 40px;
   }
 `;
 

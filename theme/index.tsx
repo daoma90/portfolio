@@ -9,7 +9,7 @@ const size = {
   laptop: 1025,
   laptopM: 1340,
   laptopL: 1440,
-  desktop: 2560,
+  desktop: 2600,
 };
 
 const breakpoints = {
@@ -38,7 +38,16 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const lightColors: { [key: string]: any } = {
+const supportColors: { [key: string]: string } = {
+  orange: "#CF7914",
+  red: "#D11B15",
+  green: "#45CF15",
+  purple: "#6915D1",
+  yellow: "#D1C915",
+  blue: "#158CD1",
+};
+
+const lightColors: { [key: string]: string } = {
   background: "#E8E4DE",
   primaryAccent: "#242424",
   secondaryAccent: "#E8E4DE",
@@ -46,8 +55,9 @@ const lightColors: { [key: string]: any } = {
   cursor: "#242424",
   bubbles: "#242424",
   pageTransition: "#FFFFFF",
+  ...supportColors,
 };
-const darkColors: { [key: string]: any } = {
+const darkColors: { [key: string]: string } = {
   background: "#242424",
   primaryAccent: "#E8E4DE",
   secondaryAccent: "#242424",
@@ -55,11 +65,22 @@ const darkColors: { [key: string]: any } = {
   cursor: "#646464",
   bubbles: "#E8E4DE",
   pageTransition: "#000000",
+  ...supportColors,
+};
+
+const g = {
+  1: "#CF7914",
+  2: "#D11B15",
+  3: "#45CF15",
+  4: "#6915D1",
+  5: "#D1C915",
+  6: "#158CD1",
 };
 const gradients: { [key: string]: any } = {
-  bluePurple: "to right bottom, #3BB2F6 0% 30%, #8D36F9 70% 100%",
-  orangeRed: "to right bottom, #EEA12D 0% 30%, #DF2A2A 70% 100%",
-  yellowGreen: "to right bottom, #E5E92A 0% 30%, #4CC123 70% 100%",
+  bluePurple: `to right bottom, ${supportColors.blue} 0% 30%, ${supportColors.purple} 70% 100%`,
+  orangeRed: `to right bottom, ${supportColors.orange} 0% 30%, ${supportColors.red} 70% 100%`,
+  yellowGreen: `to right bottom, ${supportColors.yellow} 0% 30%, ${supportColors.green} 70% 100%`,
+  rainbow: `from 0deg , ${g[1]}, ${g[2]}, ${g[3]}, ${g[4]},  ${g[5]}, ${g[6]},${g[1]}, ${g[2]}, ${g[3]}, ${g[4]},  ${g[5]}, ${g[6]},${g[1]}, ${g[2]}, ${g[3]}, ${g[4]},  ${g[5]}, ${g[6]}, ${g[1]}`,
 };
 
 const colors: { [key: string]: any } = {
@@ -78,7 +99,7 @@ const spacings = {
 const utils = {
   borderRadius: "25px",
   themeColorTransitionDuration: 0.5,
-  pageTransitionDuration: 0.5,
+  pageTransitionDuration: 1,
 };
 
 const theme = {

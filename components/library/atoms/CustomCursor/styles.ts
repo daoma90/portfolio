@@ -35,7 +35,7 @@ export const Dot = styled(m.div)`
   background-color: #ffffff;
   border-radius: 100%;
   /* transform: translate(-50%, -50%); */
-  z-index: 999;
+  z-index: 998;
   pointer-events: none;
   backdrop-filter: grayscale(1);
   mix-blend-mode: difference;

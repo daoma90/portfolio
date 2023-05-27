@@ -58,3 +58,7 @@ export const Block = styled(m.div)`
   /* height: clamp(50px, 10vw, 160px); */
   will-change: transform;
 `;
+
+export const Name = styled.span`
+  color: ${(props) => props.theme.colors.purple};
+`;
