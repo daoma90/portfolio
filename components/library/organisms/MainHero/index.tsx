@@ -49,7 +49,7 @@ const MainHero = () => {
   const renderRow = (text: string, index: number) => {
     return (
       <div key={`greeting-${index}`}>
-        <s.GreetingsAnimationContainer index={index}>
+        <s.GreetingsAnimationContainer>
           <AnimatePresence>
             {currentGreeting === index && (
               <TextReveal

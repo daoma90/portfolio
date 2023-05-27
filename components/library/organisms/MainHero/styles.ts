@@ -33,7 +33,9 @@ export const GreetingsAnimationContainer = styled(m.div)`
   position: absolute;
   width: clamp(150px, 25vw, 350px);
   overflow: hidden;
-  height: 100%;
+  height: clamp(52px, 10vw, 150px);
+  display: flex;
+  align-items: center;
 `;
 
 export const RowContainer = styled.div`
