@@ -1,6 +1,7 @@
 import React, { FC, ReactElement } from "react";
 import { DiJsBadge, DiReact } from "react-icons/di";
 import styled from "styled-components";
+import ExpoIcon from "./expo";
 import FigmaIcon from "./figma";
 import JSIcon from "./js";
 import NextIcon from "./next";
@@ -36,6 +37,12 @@ const Icons: FC<IconsProps> = ({ icon, size, color }) => {
       return (
         <StyledIcon size={size} color={color}>
           <FigmaIcon size={size} color={color} />
+        </StyledIcon>
+      );
+    case "expo":
+      return (
+        <StyledIcon size={size} color={color}>
+          <ExpoIcon size={size} color={color} />
         </StyledIcon>
       );
     default:
