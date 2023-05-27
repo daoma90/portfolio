@@ -37,7 +37,7 @@ export const Card = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
-
+  transition: ${(props) => props.theme.utils.themeTransition};
   ${breakpoints.laptop} {
     gap: 3vh;
   }

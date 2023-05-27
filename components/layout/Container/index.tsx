@@ -19,4 +19,5 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: ${(props) => props.theme.utils.themeTransition};
 `;

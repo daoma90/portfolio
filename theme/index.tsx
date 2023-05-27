@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 
+export const themeTransition = `background-color 0.5s linear, color 0.5s linear`;
+
 const size = {
   mobileS: 320,
   mobileM: 375,
@@ -26,7 +28,7 @@ const breakpoints = {
 
 const GlobalStyle = createGlobalStyle`
   * {
-    transition: inherit;
+    /* transition: inherit; */
     cursor: auto;
     ${breakpoints.tablet} {
       cursor: none;
@@ -99,6 +101,7 @@ const spacings = {
 const utils = {
   borderRadius: "25px",
   themeColorTransitionDuration: 0.5,
+  themeTransition,
   pageTransitionDuration: 1,
 };
 

@@ -8,6 +8,7 @@ export const HeroText = styled(m.h1)`
   color: ${(props) => props.theme.colors.textPrimary};
   font-size: clamp(50px, 9vw, 128px);
   margin: 0;
+  transition: ${(props) => props.theme.utils.themeTransition};
 `;
 
 export const H2 = styled(m.h2)`
@@ -15,6 +16,7 @@ export const H2 = styled(m.h2)`
   color: ${(props) => props.theme.colors.textPrimary};
   font-size: clamp(25px, 9vw, 30px);
   margin: 0;
+  transition: ${(props) => props.theme.utils.themeTransition};
 `;
 
 export const H3 = styled(m.h3)`
@@ -23,6 +25,7 @@ export const H3 = styled(m.h3)`
   color: ${(props) => props.theme.colors.textPrimary};
   font-size: clamp(26px, 9vw, 48px);
   margin: 0;
+  transition: ${(props) => props.theme.utils.themeTransition};
 `;
 
 export const BodyRegular = styled(m.p)`
@@ -30,6 +33,7 @@ export const BodyRegular = styled(m.p)`
   weight: 400;
   color: ${(props) => props.theme.colors.textPrimary};
   font-size: 16px;
+  transition: ${(props) => props.theme.utils.themeTransition};
 `;
 
 export const BodyLarge = styled(m.p)`
@@ -37,6 +41,7 @@ export const BodyLarge = styled(m.p)`
   weight: 400;
   color: ${(props) => props.theme.colors.textPrimary};
   font-size: 18px;
+  transition: ${(props) => props.theme.utils.themeTransition};
 `;
 
 export const HeaderNavLink = styled(m.p)`
@@ -48,7 +53,7 @@ export const HeaderNavLink = styled(m.p)`
   font-size: 2rem;
   display: flex;
   align-items: center;
-
+  transition: ${(props) => props.theme.utils.themeTransition};
   ${breakpoints.laptop} {
     font-size: 1rem;
     height: 40px;
@@ -60,4 +65,5 @@ export const LogoText = styled.p`
   color: ${(props) => props.theme.colors.textPrimary};
   font-size: 25px;
   margin: 0;
+  transition: ${(props) => props.theme.utils.themeTransition};
 `;

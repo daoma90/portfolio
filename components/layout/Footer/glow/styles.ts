@@ -35,7 +35,7 @@ export const Background = styled.div`
   position: absolute;
   top: calc(10.5vh);
   left: -25%;
-
+  transition: ${(props) => props.theme.utils.themeTransition};
   ${breakpoints.tablet} {
     top: calc(10.4vh);
   }
