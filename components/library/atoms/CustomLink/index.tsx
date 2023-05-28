@@ -5,10 +5,15 @@ import styled from "styled-components";
 interface CustomLinkProps {
   children: ReactNode;
   link: string;
+  target?: string;
 }
 
-const CustomLink: FC<CustomLinkProps> = ({ children, link }) => {
-  return <StyledLink href={link}>{children}</StyledLink>;
+const CustomLink: FC<CustomLinkProps> = ({ children, link, target = "_self" }) => {
+  return (
+    <StyledLink href={link} target={target}>
+      {children}
+    </StyledLink>
+  );
 };
 
 export default CustomLink;
