@@ -55,7 +55,7 @@ const MainHero = () => {
               <TextReveal
                 containerStyle={{ width: "100%" }}
                 direction="x"
-                blockDelay={utils.pageTransitionDuration}
+                blockDelay={utils.pageTransitionDuration - 0.5}
                 blockDuration={2}
                 textExit={{
                   opacity: 0,
@@ -82,14 +82,14 @@ const MainHero = () => {
         })}
       </s.GreetingsRowContainer>
       <s.RowContainer>
-        <TextReveal direction="x" blockDelay={0.5 + utils.pageTransitionDuration} blockDuration={2}>
+        <TextReveal direction="x" blockDelay={utils.pageTransitionDuration} blockDuration={2}>
           <HeroText>
             I&apos;m <s.Name>David.</s.Name>
           </HeroText>
         </TextReveal>
       </s.RowContainer>
       <s.RowContainer>
-        <TextReveal direction="x" blockDelay={1 + utils.pageTransitionDuration} blockDuration={2}>
+        <TextReveal direction="x" blockDelay={0.5 + utils.pageTransitionDuration} blockDuration={2}>
           <HeroText>A front-end developer.</HeroText>
         </TextReveal>
       </s.RowContainer>
