@@ -35,8 +35,14 @@ const GlobalStyle = createGlobalStyle`
     }
     margin:0;
   }
+
+  html {
+    overflow:hidden;
+    height: 100%; 
+  }
   body {
     margin: 0;
+    height: 100%;
   }
 `;
 

@@ -13,6 +13,10 @@ export const Container = styled.section`
   padding-left: ${(props) => props.theme.spacings.padding};
   padding-right: ${(props) => props.theme.spacings.padding};
   gap: 3rem;
+
+  ${breakpoints.laptop} {
+    scroll-snap-align: center;
+  }
 `;
 
 export const TextContainer = styled(m.div)`

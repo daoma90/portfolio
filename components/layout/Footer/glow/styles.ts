@@ -2,10 +2,14 @@ import { breakpoints } from "@/theme";
 import styled from "styled-components";
 
 export const Container = styled.footer`
-  height: 45vh;
+  min-height: 50vh;
+  max-height: 50vh;
+  max-width: 100vw;
   position: relative;
   overflow: hidden;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @keyframes rotate {
     from {
       transform: rotate(0deg);
@@ -13,6 +17,9 @@ export const Container = styled.footer`
     to {
       transform: rotate(360deg);
     }
+  }
+  ${breakpoints.laptop} {
+    scroll-snap-align: end;
   }
 `;
 

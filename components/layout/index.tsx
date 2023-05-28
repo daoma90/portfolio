@@ -7,7 +7,6 @@ import dynamic from "next/dynamic";
 import Splash from "../library/atoms/Splash";
 import Footer from "./Footer/glow";
 
-const DynamicFooter = dynamic(() => import("./Footer/glow"), { ssr: false });
 const DynamicCursor = dynamic(() => import("../library/atoms/CustomCursor"), { ssr: false });
 
 interface LayoutProps {
@@ -22,7 +21,6 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <Container>
         <Header />
         {children}
-        {/* <DynamicFooter /> */}
         <Footer />
       </Container>
       {/* <Splash /> */}

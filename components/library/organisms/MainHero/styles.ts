@@ -21,6 +21,7 @@ export const Container = styled.section`
     height: 100vh;
     padding-top: 0;
     padding-bottom: 0;
+    scroll-snap-align: center;
   }
 `;
 

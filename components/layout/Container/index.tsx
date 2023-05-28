@@ -14,10 +14,13 @@ export default Container;
 const StyledContainer = styled.div`
   background-color: ${(props) => props.theme.colors.background};
   min-height: 100vh;
+  max-height: 100vh;
   max-width: 100vw;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
   position: relative;
   transition: ${(props) => props.theme.utils.themeTransition};
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 `;
