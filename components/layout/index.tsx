@@ -23,7 +23,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <Header />
         {children}
         {/* <DynamicFooter /> */}
-        <Footer />
+        {/* <Footer /> */}
       </Container>
       {/* <Splash /> */}
       <DynamicCursor />

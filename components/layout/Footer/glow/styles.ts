@@ -1,11 +1,11 @@
 import { breakpoints } from "@/theme";
+import { m } from "framer-motion";
 import styled from "styled-components";
 
-export const Container = styled.footer`
-  height: 45vh;
+export const Container = styled(m.div)`
+  height: 100vh;
   position: relative;
   overflow: hidden;
-
   @keyframes rotate {
     from {
       transform: rotate(0deg);
@@ -16,46 +16,50 @@ export const Container = styled.footer`
   }
 `;
 
-export const Border = styled.div`
+export const Border = styled(m.div)`
   width: 150%;
   aspect-ratio: 1/1;
   border-radius: 100%;
   background: conic-gradient(${(props) => props.theme.gradients.rainbow});
   position: absolute;
-  top: 10vh;
+  top: 50vh;
   left: -25%;
   animation: rotate 30s linear infinite;
+  ${breakpoints.tablet} {
+    top: 70vh;
+  }
 `;
 
-export const Background = styled.div`
+export const Background = styled(m.div)`
   width: 150%;
   aspect-ratio: 1/1;
   border-radius: 100% 100% 0 0;
   background-color: ${(props) => props.theme.colors.secondaryAccent};
   position: absolute;
-  top: calc(10.5vh);
+  top: 51vh;
   left: -25%;
   transition: ${(props) => props.theme.utils.themeTransition};
 
   ${breakpoints.tablet} {
-    top: calc(10.4vh);
-  }
-
-  ${breakpoints.desktopL} {
-    top: calc(10.25vh);
+    top: 70.5vh;
   }
 `;
 
-export const Glow = styled.div`
-  width: 150%;
+export const Glow = styled(m.div)`
+  width: 150vw;
   aspect-ratio: 1/1;
+  height: 150vw;
   border-radius: 100%;
   background: conic-gradient(${(props) => props.theme.gradients.rainbow});
   position: absolute;
-  top: 10vh;
+  top: 50vh;
   left: -25%;
   filter: blur(40px);
   animation: rotate 30s linear infinite;
+
+  ${breakpoints.tablet} {
+    top: 70vh;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -65,16 +69,21 @@ export const ContentContainer = styled.div`
   justify-content: center;
 `;
 
-export const IconContainer = styled.div`
+export const IconRow = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
-  margin-top: 10rem;
+  gap: 3rem;
+  margin-top: 50vh;
+
+  ${breakpoints.tablet} {
+    gap: 5rem;
+    margin-top: 70vh;
+  }
 `;
 
-export const IconLink = styled.div`
+export const IconContainer = styled(m.div)`
   background-color: transparent;
   border: none;
 `;

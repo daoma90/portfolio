@@ -66,9 +66,9 @@ const Icons: FC<IconsProps> = ({ icon, size, color }) => {
       );
     case "mail":
       return (
-        // <StyledIcon size={size} color={color}>
-        <IoMailOutline size={size} />
-        // </StyledIcon>
+        <StyledIoIcon size={size} color={color}>
+          <IoMailOutline size={size} />
+        </StyledIoIcon>
       );
     case "github":
       return (
@@ -84,33 +84,33 @@ const Icons: FC<IconsProps> = ({ icon, size, color }) => {
       );
     case "moon":
       return (
-        // <StyledIcon size={size} color={color}>
-        <IoMoonOutline size={size} color={color} />
-        // </StyledIcon>
+        <StyledIoIcon size={size} color={color}>
+          <IoMoonOutline size={size} />
+        </StyledIoIcon>
       );
     case "sun":
       return (
-        // <StyledIcon size={size} color={color}>
-        <IoSunnyOutline size={size} color={color} />
-        // </StyledIcon>
+        <StyledIoIcon size={size} color={color}>
+          <IoSunnyOutline size={size} />
+        </StyledIoIcon>
       );
     case "link":
       return (
-        // <StyledIcon size={size} color={color}>
-        <IoArrowForward size={size} color={color} />
-        // </StyledIcon>
+        <StyledIoIcon size={size} color={color}>
+          <IoArrowForward size={size} />
+        </StyledIoIcon>
       );
     case "home":
       return (
-        // <StyledIcon size={size} color={color}>
-        <IoHomeOutline size={size} color={color} />
-        // </StyledIcon>
+        <StyledIoIcon size={size} color={color}>
+          <IoHomeOutline size={size} />
+        </StyledIoIcon>
       );
     case "open":
       return (
-        // <StyledIcon size={size} color={color}>
-        <IoOpenOutline size={size} color={color} />
-        // </StyledIcon>
+        <StyledIoIcon size={size} color={color}>
+          <IoOpenOutline size={size} />
+        </StyledIoIcon>
       );
     case "construction":
       return <Image src="/underconstruction.png" alt="Construction sign" width={40} height={40} />;
@@ -131,5 +131,13 @@ const StyledIcon = styled.div<StyledIconProps>`
   max-width: ${(props) => props.size}px;
   path {
     fill: ${(props) => props.theme.colors[props.color]};
+  }
+`;
+
+const StyledIoIcon = styled.div<StyledIconProps>`
+  max-height: ${(props) => props.size}px;
+  max-width: ${(props) => props.size}px;
+  svg {
+    color: ${(props) => props.theme.colors[props.color]};
   }
 `;

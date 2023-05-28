@@ -24,7 +24,7 @@ export const Container = styled.section`
   }
 `;
 
-export const GreetingsRowContainer = styled.div`
+export const GreetingsRowContainer = styled(m.div)`
   height: clamp(60px, 11vw, 150px);
   position: relative;
 `;
@@ -38,7 +38,7 @@ export const GreetingsAnimationContainer = styled(m.div)`
   align-items: center;
 `;
 
-export const RowContainer = styled.div`
+export const RowContainer = styled(m.div)`
   position: relative;
   width: auto;
   overflow: hidden;

@@ -19,6 +19,10 @@ export const CardContainer = styled(m.div)`
   min-height: 400px;
   position: relative;
   ${breakpoints.laptop} {
+    height: 50vh;
+  }
+
+  ${breakpoints.laptopL} {
     height: 40vh;
   }
 `;
@@ -36,7 +40,7 @@ export const Card = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 5vh;
   transition: ${(props) => props.theme.utils.themeTransition};
   ${breakpoints.laptop} {
     gap: 3vh;
@@ -79,7 +83,7 @@ export const CardGlow = styled.div<CardGlowProps>`
 export const ContentContainer = styled(m.div)`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 5vh;
   ${breakpoints.laptop} {
     gap: 3vh;
   }
