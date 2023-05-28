@@ -36,6 +36,7 @@ export const Background = styled.div`
   top: calc(10.5vh);
   left: -25%;
   transition: ${(props) => props.theme.utils.themeTransition};
+
   ${breakpoints.tablet} {
     top: calc(10.4vh);
   }
@@ -55,4 +56,25 @@ export const Glow = styled.div`
   left: -25%;
   filter: blur(40px);
   animation: rotate 30s linear infinite;
+`;
+
+export const ContentContainer = styled.div`
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+export const IconContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  margin-top: 10rem;
+`;
+
+export const IconLink = styled.div`
+  background-color: transparent;
+  border: none;
 `;
