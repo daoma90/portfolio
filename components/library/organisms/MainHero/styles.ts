@@ -62,5 +62,5 @@ export const Block = styled(m.div)`
 `;
 
 export const Name = styled.span`
-  color: ${(props) => props.theme.colors.purple};
+  color: ${(props) => props.theme.colors.orange};
 `;
