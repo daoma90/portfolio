@@ -2,11 +2,6 @@ import PageTransition from "@/components/library/atoms/PageTransition";
 import GlowCards from "@/components/library/organisms/GlowCards";
 import MainHero from "@/components/library/organisms/MainHero";
 import Head from "next/head";
-import dynamic from "next/dynamic";
-
-const DynamicPageTransition = dynamic(() => import("../components/library/atoms/PageTransition"), {
-  ssr: false,
-});
 
 export default function Home() {
   return (
@@ -22,7 +17,7 @@ export default function Home() {
         <MainHero />
         <GlowCards />
       </main>
-      <DynamicPageTransition />
+      <PageTransition />
     </>
   );
 }
