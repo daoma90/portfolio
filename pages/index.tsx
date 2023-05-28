@@ -5,8 +5,20 @@ import GlowCards from "@/components/library/organisms/GlowCards";
 import MainHero from "@/components/library/organisms/MainHero";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [windowWidth, setWindowWidth] = useState<number>(1026);
+
+  // useEffect(() => {
+  //   const onResize = () => {
+  //     setWindowWidth(window.innerWidth);
+  //   };
+
+  //   window.addEventListener("resize", onResize);
+  //   return () => window.removeEventListener("resize", onResize);
+  // }, []);
+
   return (
     <>
       <Head>
@@ -16,27 +28,37 @@ export default function Home() {
         <meta name="keyword" content="portfolio, front-end, front end, developer" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main style={{ flex: "1" }}>
+      <main style={{ flex: "1", overflow: "hidden" }}>
+        {/* {windowWidth > 1025 ? ( */}
         <ReactFullpage
           scrollingSpeed={1000}
           credits={{ enabled: false }}
+          onLeave={(origin, destination, direction) => {}}
+          lazyLoading={false}
           render={({ state, fullpageApi }) => {
             return (
               <ReactFullpage.Wrapper>
                 <SectionContainer>
-                  <MainHero />
+                  <MainHero direction={state.direction} index={0} origin={state?.origin?.index} />
                 </SectionContainer>
                 <SectionContainer>
-                  <GlowCards />
+                  <GlowCards direction={state.direction} index={1} origin={state?.origin?.index} />
                 </SectionContainer>
 
                 <SectionContainer>
-                  <Footer />
+                  <Footer direction={state.direction} index={2} origin={state?.origin?.index} />
                 </SectionContainer>
               </ReactFullpage.Wrapper>
             );
           }}
         />
+        {/* ) : (
+          <>
+            <MainHero />
+            <GlowCards />
+            <Footer />
+          </>
+        )} */}
       </main>
       <PageTransition />
     </>
