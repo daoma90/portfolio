@@ -2,7 +2,7 @@ import { breakpoints } from "@/theme";
 import styled from "styled-components";
 
 export const Container = styled.footer`
-  height: 45vh;
+  height: 100vh;
   position: relative;
   overflow: hidden;
 

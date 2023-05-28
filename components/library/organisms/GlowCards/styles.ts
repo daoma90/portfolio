@@ -7,7 +7,7 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
   margin: 0 auto;
   max-width: ${(props) => props.theme.spacings.contentMaxWidth};
   padding-left: ${(props) => props.theme.spacings.padding};
