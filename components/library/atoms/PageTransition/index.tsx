@@ -14,37 +14,45 @@ const PageTransition: FC<PageTransitionProps> = ({}) => {
         initial={{ x: "0%" }}
         animate={{ x: "100%" }}
         transition={{
-          delay: 0.3,
+          delay: 0.2,
           duration: utils.pageTransitionDuration,
-          ease: [0, 0.89, 0.41, 1],
+          ease: [0, 0.55, 0.41, 1],
+          // ease: "easeOut",
         }}
       />
-      <PageEnter2
+      {/* <PageEnter2
         initial={{ x: "0%" }}
         animate={{ x: "100%" }}
         transition={{
           duration: utils.pageTransitionDuration,
-          ease: [0, 0.89, 0.41, 1],
+          ease: [0, 0.55, 0.41, 1],
+          // ease: "easeOut",
         }}
-      />
+      /> */}
 
       <PageExit
         initial={{ x: "-100%" }}
         animate={{ x: "-100%" }}
         exit={{ x: "0%" }}
-        transition={{ duration: utils.pageTransitionDuration, ease: [0, 0.89, 0.41, 1] }}
+        transition={{
+          duration: utils.pageTransitionDuration,
+          ease: [0, 0.55, 0.41, 1],
+          // ease: "easeIn",
+        }}
         key="page-exit"
       />
-      <PageExit2
+      {/* <PageExit2
         initial={{ x: "-100%" }}
         animate={{ x: "-100%" }}
         exit={{ x: "0%" }}
         transition={{
           duration: utils.pageTransitionDuration,
-          delay: 0.3,
-          ease: [0, 0.89, 0.41, 1],
+          delay: 0.2,
+          ease: [0, 0.55, 0.41, 1],
+
+          // ease: "easeIn",
         }}
-      />
+      /> */}
     </>
   );
 };
@@ -68,7 +76,7 @@ const PageEnter2 = styled(m.div)`
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: ${(props) => props.theme.colors.purple};
+  background-color: ${(props) => props.theme.colors.orange};
 `;
 
 const PageExit = styled(m.div)`
@@ -87,6 +95,6 @@ const PageExit2 = styled(m.div)`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: ${(props) => props.theme.colors.purple};
+  background-color: ${(props) => props.theme.colors.orange};
   z-index: 100;
 `;
