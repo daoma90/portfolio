@@ -1,9 +1,22 @@
-import React, { FC, ReactElement } from "react";
-import { DiJsBadge, DiReact } from "react-icons/di";
+import Image from "next/image";
+import React, { FC } from "react";
+import {
+  IoArrowForward,
+  IoHomeOutline,
+  IoMailOutline,
+  IoMoonOutline,
+  IoOpen,
+  IoOpenOutline,
+  IoSunnyOutline,
+} from "react-icons/io5";
 import styled from "styled-components";
 import ExpoIcon from "./expo";
 import FigmaIcon from "./figma";
+import GithubIcon from "./github";
 import JSIcon from "./js";
+import LinkedinIcon from "./linkedin";
+import MailCircleIcon from "./mail-circle";
+import MailIcon from "./mail";
 import NextIcon from "./next";
 import ReactIcon from "./react";
 
@@ -18,39 +31,91 @@ const Icons: FC<IconsProps> = ({ icon, size, color }) => {
     case "js":
       return (
         <StyledIcon size={size} color={color}>
-          <JSIcon size={size} color={color} />
+          <JSIcon size={size} />
         </StyledIcon>
       );
     case "react":
       return (
         <StyledIcon size={size} color={color}>
-          <ReactIcon size={size} color={color} />
+          <ReactIcon size={size} />
         </StyledIcon>
       );
     case "next":
       return (
         <StyledIcon size={size} color={color}>
-          <NextIcon size={size} color={color} />
+          <NextIcon size={size} />
         </StyledIcon>
       );
     case "figma":
       return (
         <StyledIcon size={size} color={color}>
-          <FigmaIcon size={size} color={color} />
+          <FigmaIcon size={size} />
         </StyledIcon>
       );
     case "expo":
       return (
         <StyledIcon size={size} color={color}>
-          <ExpoIcon size={size} color={color} />
+          <ExpoIcon size={size} />
         </StyledIcon>
       );
-    default:
+    case "mail-circle":
       return (
         <StyledIcon size={size} color={color}>
-          <ReactIcon size={size} color={color} />
+          <MailCircleIcon size={size} />
         </StyledIcon>
       );
+    case "mail":
+      return (
+        // <StyledIcon size={size} color={color}>
+        <IoMailOutline size={size} />
+        // </StyledIcon>
+      );
+    case "github":
+      return (
+        <StyledIcon size={size} color={color}>
+          <GithubIcon size={size} />
+        </StyledIcon>
+      );
+    case "linkedin":
+      return (
+        <StyledIcon size={size} color={color}>
+          <LinkedinIcon size={size} />
+        </StyledIcon>
+      );
+    case "moon":
+      return (
+        // <StyledIcon size={size} color={color}>
+        <IoMoonOutline size={size} color={color} />
+        // </StyledIcon>
+      );
+    case "sun":
+      return (
+        // <StyledIcon size={size} color={color}>
+        <IoSunnyOutline size={size} color={color} />
+        // </StyledIcon>
+      );
+    case "link":
+      return (
+        // <StyledIcon size={size} color={color}>
+        <IoArrowForward size={size} color={color} />
+        // </StyledIcon>
+      );
+    case "home":
+      return (
+        // <StyledIcon size={size} color={color}>
+        <IoHomeOutline size={size} color={color} />
+        // </StyledIcon>
+      );
+    case "open":
+      return (
+        // <StyledIcon size={size} color={color}>
+        <IoOpenOutline size={size} color={color} />
+        // </StyledIcon>
+      );
+    case "construction":
+      return <Image src="/underconstruction.png" alt="Construction sign" width={40} height={40} />;
+    default:
+      return null;
   }
 };
 

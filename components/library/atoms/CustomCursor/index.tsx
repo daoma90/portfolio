@@ -3,9 +3,9 @@ import { useThemeContext } from "@/context/ThemeContext";
 import { colors } from "@/theme";
 import React, { useEffect, useState } from "react";
 import * as s from "./styles";
-import { IoArrowForward, IoMoonOutline, IoSunnyOutline, IoHomeOutline } from "react-icons/io5";
-import Image from "next/image";
+
 import { isChrome, isMacOs, isSafari } from "react-device-detect";
+import Icons from "../Icons";
 
 const CustomCursor = () => {
   const { cursorType } = useMouseContext();
@@ -70,28 +70,10 @@ const CustomCursor = () => {
                 borderColor: colors[theme].cursor,
               }
         }
-        transition={{ type: "spring", damping: 10 }}
+        // transition={{ type: "spring", damping: 10 }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
       >
-        {cursorType === "link" && (
-          <IoArrowForward size={"60%"} color={colors[theme].secondaryAccent} />
-        )}
-        {cursorType === "dark" && (
-          <IoMoonOutline size={"60%"} color={colors[theme].secondaryAccent} />
-        )}
-        {cursorType === "light" && (
-          <IoSunnyOutline size={"70%"} color={colors[theme].secondaryAccent} />
-        )}
-        {cursorType === "home" && (
-          <IoHomeOutline size={"60%"} color={colors[theme].secondaryAccent} />
-        )}
-        {cursorType === "construction" && (
-          <Image
-            src="/underconstruction.png"
-            alt="Under construction sign"
-            width={40}
-            height={40}
-          />
-        )}
+        {cursorType && <Icons icon={cursorType} size={40} color="secondaryAccent" />}
       </s.Ring>
 
       <s.Dot
@@ -100,7 +82,8 @@ const CustomCursor = () => {
         animate={
           cursorType ? { scale: 1, x: "-50%", y: "-50%" } : { scale: 0.15, x: "-50%", y: "-50%" }
         }
-        transition={{ type: "spring", damping: 5, stiffness: 100, mass: 1 }}
+        // transition={{ type: "spring", damping: 7, stiffness: 100, mass: 1 }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
       />
     </>
   );
