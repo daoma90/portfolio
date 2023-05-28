@@ -17,7 +17,7 @@ interface GlowCardProps {
 const duration = 0.5;
 const ease = [0.165, 0.84, 0.44, 1];
 const y = 100;
-const delay = 3;
+const delay = 2;
 
 const GlowCard: FC<GlowCardProps> = ({
   gradient,
