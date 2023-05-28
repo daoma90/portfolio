@@ -10,7 +10,7 @@ const size = {
   tablet: 768,
   laptop: 1025,
   laptopM: 1340,
-  laptopL: 1440,
+  laptopL: 2000,
   desktop: 2600,
 };
 
@@ -37,6 +37,10 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0;
+  }
+
+  .fp-watermark {
+    opacity: 0;
   }
 `;
 
