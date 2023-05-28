@@ -5,14 +5,22 @@ import styled from "styled-components";
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
   max-width: ${(props) => props.theme.spacings.contentMaxWidth};
   padding-left: ${(props) => props.theme.spacings.padding};
   padding-right: ${(props) => props.theme.spacings.padding};
+  padding-top: 20vh;
+  padding-bottom: 20vh;
   gap: 3rem;
+
+  ${breakpoints.laptop} {
+    padding-top: 0;
+    padding-bottom: 0;
+    align-items: flex-start;
+  }
 `;
 
 export const TextContainer = styled(m.div)`
@@ -29,7 +37,7 @@ export const Block = styled(m.div)<{ offset: string }>`
   background-color: ${(props) => props.theme.colors.primaryAccent};
 `;
 
-export const CardContainer = styled.div`
+export const CardRow = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -43,7 +51,13 @@ export const CardContainer = styled.div`
   }
 `;
 
-export const Row = styled.div`
+export const CardContainer = styled(m.div)`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+export const Row = styled(m.div)`
   display: flex;
   flex-direction: row;
   gap: 1rem;
