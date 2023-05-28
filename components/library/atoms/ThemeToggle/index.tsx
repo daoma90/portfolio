@@ -30,7 +30,7 @@ const ThemeToggle = () => {
         }}
         onMouseEnter={() => {
           if (theme !== "dark") {
-            cursorChangeHandler("dark");
+            cursorChangeHandler("moon");
           }
         }}
         onMouseLeave={() => cursorChangeHandler("")}
@@ -51,7 +51,7 @@ const ThemeToggle = () => {
         }}
         onMouseEnter={() => {
           if (theme !== "light") {
-            cursorChangeHandler("light");
+            cursorChangeHandler("sun");
           }
         }}
         onMouseLeave={() => cursorChangeHandler("")}
