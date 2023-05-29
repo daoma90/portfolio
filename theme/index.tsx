@@ -34,6 +34,7 @@ const GlobalStyle = createGlobalStyle`
       cursor: none;
     }
     margin:0;
+    box-sizing: border-box;
   }
   body {
     margin: 0;
@@ -99,7 +100,8 @@ const fonts = {};
 
 const spacings = {
   contentMaxWidth: "1420px",
-  padding: "2rem",
+  paddingHorizontal: "2rem",
+  sectionVerticalPadding: "20vh",
 };
 
 const utils = {

@@ -53,8 +53,8 @@ export const MobileHeaderContainer = styled.div<{ menuIsOpen: boolean }>`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-left: ${(props) => props.theme.spacings.padding};
-  padding-right: ${(props) => props.theme.spacings.padding};
+  padding-left: ${(props) => props.theme.spacings.paddingHorizontal};
+  padding-right: ${(props) => props.theme.spacings.paddingHorizontal};
   position: absolute;
   left: 0;
   right: 0;

@@ -23,7 +23,7 @@ const GlowCards: FC<GlowCardsProps> = ({ direction, index, origin }) => {
   };
 
   const downIn = (delay: number) => {
-    return { y: 0, opacity: 1, transition: { duration: 0.3, delay: delay, ease: "easeOut" } };
+    return { y: 0, opacity: 1, transition: { duration: 0.5, delay: delay, ease: "easeOut" } };
   };
 
   const downOut = (delay: number) => {
@@ -31,7 +31,7 @@ const GlowCards: FC<GlowCardsProps> = ({ direction, index, origin }) => {
   };
 
   const upIn = (delay: number) => {
-    return { y: 0, opacity: 1, transition: { duration: 0.3, delay: delay, ease: "easeOut" } };
+    return { y: 0, opacity: 1, transition: { duration: 0.5, delay: delay, ease: "easeOut" } };
   };
 
   const upOut = (delay: number) => {

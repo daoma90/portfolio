@@ -1,22 +1,40 @@
+import { breakpoints } from "@/theme";
 import { m } from "framer-motion";
 import styled from "styled-components";
 
 export const Container = styled.section`
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
+  /* width: 100%; */
   max-width: ${(props) => props.theme.spacings.contentMaxWidth};
+  padding-left: ${(props) => props.theme.spacings.paddingHorizontal};
+  padding-right: ${(props) => props.theme.spacings.paddingHorizontal};
+  padding-top: ${(props) => props.theme.spacings.sectionVerticalPadding};
+  padding-bottom: ${(props) => props.theme.spacings.sectionVerticalPadding};
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  ${breakpoints.laptop} {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 `;
 
 export const ListContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   width: 100%;
-  gap: 10vw;
+  gap: 3rem;
+
+  ${breakpoints.mobileL} {
+    flex-direction: row;
+    gap: 10vw;
+    text-align: left;
+    align-items: flex-start;
+  }
 `;
 
 export const List = styled.div`
