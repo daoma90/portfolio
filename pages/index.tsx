@@ -4,12 +4,19 @@ import SectionContainer from "@/components/library/atoms/SectionContainer";
 import GlowCards from "@/components/library/organisms/GlowCards";
 import MainHero from "@/components/library/organisms/MainHero";
 import SkillList from "@/components/library/organisms/SkillList";
+import { useFactContext } from "@/context/FactContext";
 import ReactFullpage from "@fullpage/react-fullpage";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { RequestInit } from "next/dist/server/web/spec-extension/request";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
-export default function Home() {
+export default function Home({ fact }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [windowWidth, setWindowWidth] = useState<number>(1026);
+
+  const { handleSetFact } = useFactContext();
+
+  handleSetFact(fact);
 
   // useEffect(() => {
   //   const onResize = () => {
@@ -67,3 +74,15 @@ export default function Home() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const request = {
+    method: "GET",
+    headers: { "X-Api-Key": process.env.API_NINJAS_KEY as string },
+    contentType: "application/json",
+  };
+
+  const res = await fetch("https://api.api-ninjas.com/v1/facts", request);
+  const data = await res.json();
+  return { props: { fact: data[0].fact || null } };
+};
