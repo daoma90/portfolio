@@ -3,6 +3,7 @@ import PageTransition from "@/components/library/atoms/PageTransition";
 import SectionContainer from "@/components/library/atoms/SectionContainer";
 import GlowCards from "@/components/library/organisms/GlowCards";
 import MainHero from "@/components/library/organisms/MainHero";
+import SkillList from "@/components/library/organisms/SkillList";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Head from "next/head";
 import { useEffect, useState } from "react";
@@ -31,7 +32,7 @@ export default function Home() {
       <main style={{ flex: "1", overflow: "hidden" }}>
         {/* {windowWidth > 1025 ? ( */}
         <ReactFullpage
-          scrollingSpeed={1000}
+          scrollingSpeed={1500}
           credits={{ enabled: false }}
           onLeave={(origin, destination, direction) => {}}
           lazyLoading={false}
@@ -44,9 +45,11 @@ export default function Home() {
                 <SectionContainer>
                   <GlowCards direction={state.direction} index={1} origin={state?.origin?.index} />
                 </SectionContainer>
-
                 <SectionContainer>
-                  <Footer direction={state.direction} index={2} origin={state?.origin?.index} />
+                  <SkillList direction={state.direction} index={2} origin={state?.origin?.index} />
+                </SectionContainer>
+                <SectionContainer>
+                  <Footer direction={state.direction} index={3} origin={state?.origin?.index} />
                 </SectionContainer>
               </ReactFullpage.Wrapper>
             );

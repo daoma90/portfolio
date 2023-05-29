@@ -36,7 +36,7 @@ const Footer: FC<FooterProps> = ({ direction, index, origin }) => {
               cursorChangeHandler("");
             }}
             initial={{ y: 200, opacity: 0 }}
-            animate={direction === "down" && origin === index - 1 ? downIn(0.6) : upOut(0)}
+            animate={direction === "down" && origin === index - 1 ? downIn(0.8) : upOut(0)}
           >
             <CustomLink link="mailto:daoma90@gmail.com">
               <Icons icon="mail-circle" color="primaryAccent" size={50} />
@@ -49,7 +49,7 @@ const Footer: FC<FooterProps> = ({ direction, index, origin }) => {
             onMouseLeave={() => {
               cursorChangeHandler("");
             }}
-            animate={direction === "down" && origin === index - 1 ? downIn(0.7) : upOut(0.1)}
+            animate={direction === "down" && origin === index - 1 ? downIn(0.9) : upOut(0.1)}
           >
             <CustomLink link="https://github.com/daoma90" target="_blank">
               <Icons icon="github" color="primaryAccent" size={50} />
@@ -62,7 +62,7 @@ const Footer: FC<FooterProps> = ({ direction, index, origin }) => {
             onMouseLeave={() => {
               cursorChangeHandler("");
             }}
-            animate={direction === "down" && origin === index - 1 ? downIn(0.8) : upOut(0.2)}
+            animate={direction === "down" && origin === index - 1 ? downIn(1) : upOut(0.2)}
           >
             <CustomLink link="https://www.linkedin.com/in/davidoman90/" target="_blank">
               <Icons icon="linkedin" color="primaryAccent" size={50} />
