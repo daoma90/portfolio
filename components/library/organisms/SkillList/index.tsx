@@ -34,10 +34,11 @@ const SkillList: FC<SkillListProps> = ({ direction, index, origin }) => {
   return (
     <s.Container>
       <s.ListContainer>
-        {columns.map((list) => (
-          <s.List>
+        {columns.map((list, i) => (
+          <s.List key={`list-column-${i + 1}`}>
             {list.map((listItem, i) => (
               <s.ListItem
+                key={`list-item-${i + 1}`}
                 initial={{ y: 100, opacity: 0 }}
                 animate={
                   direction === "down" && origin === index
