@@ -3,13 +3,14 @@ import PageTransition from "@/components/library/atoms/PageTransition";
 import SectionContainer from "@/components/library/atoms/SectionContainer";
 import GlowCards from "@/components/library/organisms/GlowCards";
 import MainHero from "@/components/library/organisms/MainHero";
+import { useFullPageContext } from "@/context/FullPageContext";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [windowWidth, setWindowWidth] = useState<number>(1026);
-
+  // const { setMoveTo } = useFullPageContext();
   // useEffect(() => {
   //   const onResize = () => {
   //     setWindowWidth(window.innerWidth);
@@ -36,6 +37,7 @@ export default function Home() {
           onLeave={(origin, destination, direction) => {}}
           lazyLoading={false}
           render={({ state, fullpageApi }) => {
+            // setMoveTo(() => fullpageApi?.moveTo);
             return (
               <ReactFullpage.Wrapper>
                 <SectionContainer>

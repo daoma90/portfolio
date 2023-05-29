@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import { LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
+import { FullPageProvider } from "@/context/FullPageContext";
 
 export default function App({ Component, pageProps, router }: AppProps) {
   console.log("app");
@@ -13,12 +14,14 @@ export default function App({ Component, pageProps, router }: AppProps) {
       <ThemeProvider>
         <MouseProvider>
           <MenuProvider>
+            {/* <FullPageProvider> */}
             <Layout>
               <AnimatePresence mode="wait">
                 <Component {...pageProps} key={router.pathname} />
               </AnimatePresence>
               <Analytics />
             </Layout>
+            {/* </FullPageProvider> */}
           </MenuProvider>
         </MouseProvider>
       </ThemeProvider>

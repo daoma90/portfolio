@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 
-export const themeTransition = `background-color 0.5s linear, color 0.5s linear`;
+export const themeTransition = `background-color 0.5s linear, color 0.5s linear, fill 0.5s linear`;
 
 const size = {
   mobileS: 320,
