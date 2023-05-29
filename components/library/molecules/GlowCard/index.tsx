@@ -2,7 +2,7 @@ import React, { FC, MutableRefObject, useEffect, useRef, useState } from "react"
 import { BodyLarge, BodyRegular, H3 } from "../../atoms/typography";
 import * as s from "./styles";
 import Icons from "../../atoms/Icons";
-import { useInView } from "framer-motion";
+import { isSafari } from "react-device-detect";
 
 interface GlowCardProps {
   gradient: string;
@@ -32,7 +32,6 @@ const GlowCard: FC<GlowCardProps> = ({
   const [contentHeight, setContentHeight] = useState<number>(260);
   const containerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const contentRef = useRef() as MutableRefObject<HTMLDivElement>;
-
   useEffect(() => {
     setContentHeight(contentRef.current.clientHeight);
     const handleResize = () => {
@@ -129,7 +128,8 @@ const GlowCard: FC<GlowCardProps> = ({
           </s.ContentContainer>
         </s.Card>
         <s.CardBorder gradient={gradient}></s.CardBorder>
-        <s.CardGlow hovered={hovered} gradient={gradient} />
+
+        <s.CardGlow hovered={hovered} gradient={gradient} isSafari={isSafari} />
       </s.CardContainer>
     </s.Container>
   );
