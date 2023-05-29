@@ -65,9 +65,11 @@ export const CardBorder = styled.div<CardBorderProps>`
 interface CardGlowProps {
   gradient: string;
   hovered: boolean;
+  isSafari: boolean;
 }
 
 export const CardGlow = styled.div<CardGlowProps>`
+  visibility: ${(props) => (props.isSafari ? "hidden" : "visible")};
   position: absolute;
   z-index: 1;
   width: calc(100% + 10px);
@@ -77,7 +79,8 @@ export const CardGlow = styled.div<CardGlowProps>`
   background: linear-gradient(${(props) => props.theme.gradients[props.gradient]});
   transform: ${(props) => (props.hovered ? "scale(0.95)" : "scale(0.85)")};
   transition: all 0.5s ease-out;
-  filter: blur(45px);
+  filter: ${(props) => (props.isSafari ? "" : "blur(45px)")};
+  will-change: scale;
 `;
 
 export const ContentContainer = styled(m.div)`
