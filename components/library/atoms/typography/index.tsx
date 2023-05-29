@@ -44,6 +44,14 @@ export const BodyLarge = styled(m.p)`
   transition: ${(props) => props.theme.utils.themeTransition};
 `;
 
+export const BodyXL = styled(m.p)`
+  ${sourceCodePro.style}
+  weight: 400;
+  color: ${(props) => props.theme.colors.textPrimary};
+  font-size: 26px;
+  transition: ${(props) => props.theme.utils.themeTransition};
+`;
+
 export const HeaderNavLink = styled(m.p)`
   ${sourceCodePro.style}
   text-decoration: none;

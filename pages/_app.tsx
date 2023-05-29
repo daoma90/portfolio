@@ -8,7 +8,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { FullPageProvider } from "@/context/FullPageContext";
 
 export default function App({ Component, pageProps, router }: AppProps) {
-  console.log("app");
   return (
     <LazyMotion features={domAnimation}>
       <ThemeProvider>
