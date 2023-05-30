@@ -1,4 +1,4 @@
-import { utils } from "@/theme";
+import { size, utils } from "@/theme";
 import { useInView } from "framer-motion";
 import React, { FC, useEffect, useRef, useState } from "react";
 import TextReveal from "../../atoms/TextReveal";
@@ -6,6 +6,7 @@ import { BodyRegular, H2 } from "../../atoms/typography";
 import GlowCard from "../../molecules/GlowCard";
 import * as s from "./styles";
 import { m } from "framer-motion";
+import { useWindowContext } from "@/context/WindowContext";
 
 interface GlowCardsProps {
   direction: string;
@@ -17,6 +18,7 @@ const GlowCards: FC<GlowCardsProps> = ({ direction, index, origin }) => {
   const [currentCard, setCurrentCard] = useState<number | null>(null);
   const ref = useRef(null);
   const inView = useInView(ref, { amount: 0.1 });
+  const { windowWidth } = useWindowContext();
 
   const handleSetCurrentCard = (index: number | null) => {
     setCurrentCard(index);
@@ -40,7 +42,7 @@ const GlowCards: FC<GlowCardsProps> = ({ direction, index, origin }) => {
   };
 
   const downOut = (delay: number) => {
-    return { y: -200, opacity: 0, transition: { duration: 0.3, delay: delay, ease: "easeOut" } };
+    return { y: -200, opacity: 0, transition: { duration: 0.5, delay: delay, ease: "easeOut" } };
   };
 
   const upIn = (delay: number) => {
@@ -61,7 +63,7 @@ const GlowCards: FC<GlowCardsProps> = ({ direction, index, origin }) => {
   };
 
   const upOut = (delay: number) => {
-    return { y: 200, opacity: 0, transition: { duration: 0.3, delay: delay, ease: "easeOut" } };
+    return { y: 200, opacity: 0, transition: { duration: 0.5, delay: delay, ease: "easeOut" } };
   };
   return (
     <s.Container ref={ref}>
@@ -71,9 +73,9 @@ const GlowCards: FC<GlowCardsProps> = ({ direction, index, origin }) => {
           direction === "down" && origin === index
             ? downOut(0)
             : direction === "down" && origin === index - 1
-            ? downIn(0.3)
+            ? downIn(windowWidth > size.laptop ? 0.3 : 0.5)
             : direction === "up" && origin === index + 1
-            ? upIn(0.3)
+            ? upIn(windowWidth > size.laptop ? 0.3 : 0.5)
             : direction === "up" && origin === index && upOut(0)
         }
       >
@@ -88,9 +90,9 @@ const GlowCards: FC<GlowCardsProps> = ({ direction, index, origin }) => {
             direction === "down" && origin === index
               ? downOut(0)
               : direction === "down" && origin === index - 1
-              ? downIn(0.3)
+              ? downIn(windowWidth > size.laptop ? 0.3 : 0.5)
               : direction === "up" && origin === index + 1
-              ? upIn(0.3)
+              ? upIn(windowWidth > size.laptop ? 0.3 : 0.5)
               : direction === "up" && origin === index && upOut(0)
           }
         >
@@ -112,12 +114,12 @@ const GlowCards: FC<GlowCardsProps> = ({ direction, index, origin }) => {
           initial={{ y: 0, opacity: 1 }}
           animate={
             direction === "down" && origin === index
-              ? downOut(0.1)
+              ? downOut(windowWidth > size.laptop ? 0.1 : 0)
               : direction === "down" && origin === index - 1
-              ? downIn(0.4)
+              ? downIn(windowWidth > size.laptop ? 0.4 : 0.5)
               : direction === "up" && origin === index + 1
-              ? upIn(0.4)
-              : direction === "up" && origin === index && upOut(0.1)
+              ? upIn(windowWidth > size.laptop ? 0.4 : 0.5)
+              : direction === "up" && origin === index && upOut(windowWidth > size.laptop ? 0.1 : 0)
           }
         >
           <GlowCard
@@ -137,12 +139,12 @@ const GlowCards: FC<GlowCardsProps> = ({ direction, index, origin }) => {
           initial={{ y: 0, opacity: 1 }}
           animate={
             direction === "down" && origin === index
-              ? downOut(0.2)
+              ? downOut(windowWidth > size.laptop ? 0.2 : 0)
               : direction === "down" && origin === index - 1
-              ? downIn(0.5)
+              ? downIn(windowWidth > size.laptop ? 0.5 : 0.5)
               : direction === "up" && origin === index + 1
-              ? upIn(0.5)
-              : direction === "up" && origin === index && upOut(0.2)
+              ? upIn(windowWidth > size.laptop ? 0.5 : 0.5)
+              : direction === "up" && origin === index && upOut(windowWidth > size.laptop ? 0.2 : 0)
           }
         >
           <GlowCard
@@ -162,9 +164,9 @@ const GlowCards: FC<GlowCardsProps> = ({ direction, index, origin }) => {
           direction === "down" && origin === index
             ? downOut(0)
             : direction === "down" && origin === index - 1
-            ? downIn(0.3)
+            ? downIn(windowWidth > size.laptop ? 0.3 : 0.5)
             : direction === "up" && origin === index + 1
-            ? upIn(0.3)
+            ? upIn(windowWidth > size.laptop ? 0.3 : 0.5)
             : direction === "up" && origin === index && upOut(0)
         }
       >
