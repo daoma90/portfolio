@@ -7,20 +7,8 @@ import { useFullPageContext } from "@/context/FullPageContext";
 import SkillList from "@/components/library/organisms/SkillList";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [windowWidth, setWindowWidth] = useState<number>(1026);
-  // const { setMoveTo } = useFullPageContext();
-  // useEffect(() => {
-  //   const onResize = () => {
-  //     setWindowWidth(window.innerWidth);
-  //   };
-
-  //   window.addEventListener("resize", onResize);
-  //   return () => window.removeEventListener("resize", onResize);
-  // }, []);
-
   return (
     <>
       <Head>
@@ -31,14 +19,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main style={{ flex: "1", overflow: "hidden" }}>
-        {/* {windowWidth > 1025 ? ( */}
         <ReactFullpage
           scrollingSpeed={1500}
           credits={{ enabled: false }}
           onLeave={(origin, destination, direction) => {}}
           lazyLoading={false}
           render={({ state, fullpageApi }) => {
-            // setMoveTo(() => fullpageApi?.moveTo);
             return (
               <ReactFullpage.Wrapper>
                 <SectionContainer>
@@ -57,13 +43,6 @@ export default function Home() {
             );
           }}
         />
-        {/* ) : (
-          <>
-            <MainHero />
-            <GlowCards />
-            <Footer />
-          </>
-        )} */}
       </main>
       <PageTransition />
     </>
