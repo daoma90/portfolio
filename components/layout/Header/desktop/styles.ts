@@ -28,8 +28,8 @@ export const Header = styled(m.nav)`
   align-items: center;
   gap: 10rem;
   background-color: transparent;
-  padding-left: ${(props) => props.theme.spacings.padding};
-  padding-right: ${(props) => props.theme.spacings.padding};
+  padding-left: ${(props) => props.theme.spacings.paddingHorizontal};
+  padding-right: ${(props) => props.theme.spacings.paddingHorizontal};
 `;
 
 export const Navigation = styled.div`

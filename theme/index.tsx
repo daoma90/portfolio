@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 
-export const themeTransition = `background-color 0.5s linear, color 0.5s linear`;
+export const themeTransition = `background-color 0.5s linear, color 0.5s linear, fill 0.5s linear`;
 
 const size = {
   mobileS: 320,
@@ -34,6 +34,7 @@ const GlobalStyle = createGlobalStyle`
       cursor: none;
     }
     margin:0;
+    box-sizing: border-box;
   }
   body {
     margin: 0;
@@ -99,7 +100,8 @@ const fonts = {};
 
 const spacings = {
   contentMaxWidth: "1420px",
-  padding: "2rem",
+  paddingHorizontal: "2rem",
+  sectionVerticalPadding: "20vh",
 };
 
 const utils = {

@@ -10,10 +10,10 @@ export const Container = styled.section`
   min-height: 100vh;
   margin: 0 auto;
   max-width: ${(props) => props.theme.spacings.contentMaxWidth};
-  padding-left: ${(props) => props.theme.spacings.padding};
-  padding-right: ${(props) => props.theme.spacings.padding};
-  padding-top: 20vh;
-  padding-bottom: 20vh;
+  padding-left: ${(props) => props.theme.spacings.paddingHorizontal};
+  padding-right: ${(props) => props.theme.spacings.paddingHorizontal};
+  padding-top: ${(props) => props.theme.spacings.sectionVerticalPadding};
+  padding-bottom: ${(props) => props.theme.spacings.sectionVerticalPadding};
   gap: 3rem;
 
   ${breakpoints.laptop} {

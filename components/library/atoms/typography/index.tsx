@@ -48,7 +48,7 @@ export const BodyXL = styled(m.p)`
   ${sourceCodePro.style}
   weight: 400;
   color: ${(props) => props.theme.colors.textPrimary};
-  font-size: 26px;
+  font-size: clamp(16px, 2vw, 26px);
   transition: ${(props) => props.theme.utils.themeTransition};
 `;
 

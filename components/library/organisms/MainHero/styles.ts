@@ -11,10 +11,10 @@ export const Container = styled.section`
   align-items: flex-start;
   gap: 3rem;
   max-width: ${(props) => props.theme.spacings.contentMaxWidth};
-  padding-left: ${(props) => props.theme.spacings.padding};
-  padding-right: ${(props) => props.theme.spacings.padding};
-  padding-top: 20vh;
-  padding-bottom: 20vh;
+  padding-left: ${(props) => props.theme.spacings.paddingHorizontal};
+  padding-right: ${(props) => props.theme.spacings.paddingHorizontal};
+  padding-top: ${(props) => props.theme.spacings.sectionVerticalPadding};
+  padding-bottom: ${(props) => props.theme.spacings.sectionVerticalPadding};
   margin: 0 auto;
   ${breakpoints.laptop} {
     min-height: auto;
@@ -33,7 +33,7 @@ export const GreetingsAnimationContainer = styled(m.div)`
   position: absolute;
   width: clamp(150px, 25vw, 350px);
   overflow: hidden;
-  height: clamp(52px, 10vw, 150px);
+  height: clamp(60px, 10vw, 150px);
   display: flex;
   align-items: center;
 `;

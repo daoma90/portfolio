@@ -26,7 +26,7 @@ const TextReveal: FC<TextRevealProps> = ({
       <m.div
         initial={{ opacity: 0 }}
         animate={inView && { opacity: 1 }}
-        transition={{ delay: blockDelay + blockDuration / 2, duration: 0 }}
+        transition={{ delay: blockDelay + blockDuration / 2 - 0.2, duration: 0.2 }}
         exit={textExit}
       >
         {children}

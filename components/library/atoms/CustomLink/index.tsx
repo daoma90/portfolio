@@ -6,11 +6,12 @@ interface CustomLinkProps {
   children: ReactNode;
   link: string;
   target?: string;
+  ariaLabel?: string;
 }
 
-const CustomLink: FC<CustomLinkProps> = ({ children, link, target = "_self" }) => {
+const CustomLink: FC<CustomLinkProps> = ({ children, link, target = "_self", ariaLabel }) => {
   return (
-    <StyledLink href={link} target={target}>
+    <StyledLink href={link} target={target} aria-label={ariaLabel}>
       {children}
     </StyledLink>
   );

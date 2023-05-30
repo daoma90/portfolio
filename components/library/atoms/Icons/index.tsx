@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React, { FC } from "react";
 import {
+  IoArrowDown,
   IoArrowForward,
   IoHomeOutline,
   IoMailOutline,
   IoMoonOutline,
-  IoOpen,
   IoOpenOutline,
   IoSunnyOutline,
 } from "react-icons/io5";
@@ -16,7 +16,6 @@ import GithubIcon from "./github";
 import JSIcon from "./js";
 import LinkedinIcon from "./linkedin";
 import MailCircleIcon from "./mail-circle";
-import MailIcon from "./mail";
 import NextIcon from "./next";
 import ReactIcon from "./react";
 
@@ -94,10 +93,16 @@ const Icons: FC<IconsProps> = ({ icon, size, color }) => {
           <IoSunnyOutline size={size} />
         </StyledIoIcon>
       );
-    case "link":
+    case "arrow-forward":
       return (
         <StyledIoIcon size={size} color={color}>
           <IoArrowForward size={size} />
+        </StyledIoIcon>
+      );
+    case "arrow-down":
+      return (
+        <StyledIoIcon size={size} color={color}>
+          <IoArrowDown size={size} />
         </StyledIoIcon>
       );
     case "home":
@@ -131,6 +136,7 @@ const StyledIcon = styled.div<StyledIconProps>`
   max-width: ${(props) => props.size}px;
   path {
     fill: ${(props) => props.theme.colors[props.color]};
+    transition-duration: 0.5s;
   }
 `;
 
@@ -139,5 +145,6 @@ const StyledIoIcon = styled.div<StyledIconProps>`
   max-width: ${(props) => props.size}px;
   svg {
     color: ${(props) => props.theme.colors[props.color]};
+    transition-duration: 0.5s;
   }
 `;

@@ -1,3 +1,5 @@
+import { useWindowContext } from "@/context/WindowContext";
+import { size } from "@/theme";
 import React, { FC } from "react";
 import { BodyLarge, BodyXL } from "../../atoms/typography";
 import * as s from "./styles";
@@ -15,6 +17,7 @@ interface SkillListProps {
 }
 
 const SkillList: FC<SkillListProps> = ({ direction, index, origin }) => {
+  const { windowWidth } = useWindowContext();
   const downIn = (delay: number) => {
     return { y: 0, opacity: 1, transition: { duration: 0.3, delay: delay, ease: "easeOut" } };
   };

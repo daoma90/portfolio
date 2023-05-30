@@ -3,6 +3,7 @@ import { BodyLarge, BodyRegular, H3 } from "../../atoms/typography";
 import * as s from "./styles";
 import Icons from "../../atoms/Icons";
 import { isSafari } from "react-device-detect";
+import { useWindowContext } from "@/context/WindowContext";
 
 interface GlowCardProps {
   gradient: string;
@@ -28,20 +29,14 @@ const GlowCard: FC<GlowCardProps> = ({
   handleSetCurrentCard,
   inView,
 }) => {
+  const { windowHeight } = useWindowContext();
   const [hovered, setHovered] = useState<boolean>(false);
   const [contentHeight, setContentHeight] = useState<number>(260);
   const containerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const contentRef = useRef() as MutableRefObject<HTMLDivElement>;
   useEffect(() => {
     setContentHeight(contentRef.current.clientHeight);
-    const handleResize = () => {
-      setContentHeight(contentRef.current.clientHeight);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [windowHeight]);
 
   const handlePress = () => {
     handleSetCurrentCard(index);

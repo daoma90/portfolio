@@ -16,6 +16,12 @@ export const Container = styled(m.div)`
   }
 `;
 
+export const AnimationContainer = styled(m.div)`
+  height: 100%;
+  width: 100%;
+  position: relative;
+`;
+
 export const Border = styled(m.div)`
   width: 150%;
   aspect-ratio: 1/1;
