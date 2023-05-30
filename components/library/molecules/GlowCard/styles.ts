@@ -15,8 +15,8 @@ export const Container = styled(m.article)`
 `;
 
 export const CardContainer = styled(m.div)`
-  height: 30vh;
-  min-height: 400px;
+  height: 40vh;
+  min-height: 300px;
   position: relative;
   ${breakpoints.laptop} {
     height: 50vh;
@@ -42,6 +42,7 @@ export const Card = styled.div`
   align-items: center;
   gap: 5vh;
   transition: ${(props) => props.theme.utils.themeTransition};
+  overflow: hidden;
   ${breakpoints.laptop} {
     gap: 3vh;
   }

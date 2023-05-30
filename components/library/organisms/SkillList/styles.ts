@@ -22,18 +22,14 @@ export const Container = styled.section`
 
 export const ListContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
   width: 100%;
   gap: 3rem;
 
   ${breakpoints.mobileL} {
-    flex-direction: row;
     gap: 10vw;
-    text-align: left;
-    align-items: flex-start;
   }
 `;
 
