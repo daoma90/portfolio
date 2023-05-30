@@ -3,12 +3,10 @@ import PageTransition from "@/components/library/atoms/PageTransition";
 import SectionContainer from "@/components/library/atoms/SectionContainer";
 import GlowCards from "@/components/library/organisms/GlowCards";
 import MainHero from "@/components/library/organisms/MainHero";
-import { useFullPageContext } from "@/context/FullPageContext";
 import SkillList from "@/components/library/organisms/SkillList";
 import { useFactContext } from "@/context/FactContext";
 import ReactFullpage from "@fullpage/react-fullpage";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { RequestInit } from "next/dist/server/web/spec-extension/request";
 import Head from "next/head";
 
 export default function Home({ fact }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -63,7 +61,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     contentType: "application/json",
   };
 
-  const res = await fetch("https://api.api-ninjas.com/v1/facts", request);
-  const data = await res.json();
+  // const res = await fetch("https://api.api-ninjas.com/v1/facts", request);
+  // const data = await res.json();
+  const data = [{ fact: "No fact today" }];
   return { props: { fact: data[0].fact || null } };
 };
