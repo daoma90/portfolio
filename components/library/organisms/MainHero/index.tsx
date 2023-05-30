@@ -122,7 +122,7 @@ const MainHero: FC<MainHeroProps> = ({ direction, index, origin }) => {
         initial={{ y: 0, opacity: 1 }}
         animate={
           direction === "down" && (!origin || origin === index)
-            ? { y: -200, opacity: 0, transition: { duration: 0.2, delay: 0.2, ease: "easeOut" } }
+            ? { y: -200, opacity: 0, transition: { duration: 0.3, delay: 0.2, ease: "easeOut" } }
             : direction === "up" &&
               origin === index + 1 && {
                 y: 0,

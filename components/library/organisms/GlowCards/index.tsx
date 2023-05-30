@@ -42,7 +42,7 @@ const GlowCards: FC<GlowCardsProps> = ({ direction, index, origin }) => {
   };
 
   const downOut = (delay: number) => {
-    return { y: -200, opacity: 0, transition: { duration: 0.5, delay: delay, ease: "easeOut" } };
+    return { y: -200, opacity: 0, transition: { duration: 0.3, delay: delay, ease: "easeOut" } };
   };
 
   const upIn = (delay: number) => {
@@ -63,7 +63,7 @@ const GlowCards: FC<GlowCardsProps> = ({ direction, index, origin }) => {
   };
 
   const upOut = (delay: number) => {
-    return { y: 200, opacity: 0, transition: { duration: 0.5, delay: delay, ease: "easeOut" } };
+    return { y: 200, opacity: 0, transition: { duration: 0.3, delay: delay, ease: "easeOut" } };
   };
   return (
     <s.Container ref={ref}>
@@ -75,7 +75,7 @@ const GlowCards: FC<GlowCardsProps> = ({ direction, index, origin }) => {
             : direction === "down" && origin === index - 1
             ? downIn(windowWidth > size.laptop ? 0.3 : 0.5)
             : direction === "up" && origin === index + 1
-            ? upIn(windowWidth > size.laptop ? 0.3 : 0.5)
+            ? upIn(windowWidth > size.laptop ? 0.4 : 0.5)
             : direction === "up" && origin === index && upOut(0)
         }
       >
