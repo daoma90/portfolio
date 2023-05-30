@@ -49,7 +49,10 @@ const Footer: FC<FooterProps> = ({ direction, index, origin }) => {
               initial={{ y: 200, opacity: 0 }}
               animate={direction === "down" && origin === index - 1 ? downIn(1.2) : upOut(0)}
             >
-              <CustomLink link="mailto:daoma90@gmail.com">
+              <CustomLink
+                link="mailto:daoma90@gmail.com"
+                ariaLabel="Send email to Daoma90@gmail.com"
+              >
                 <Icons icon="mail-circle" color="primaryAccent" size={50} />
               </CustomLink>
             </s.IconContainer>
@@ -62,7 +65,11 @@ const Footer: FC<FooterProps> = ({ direction, index, origin }) => {
               }}
               animate={direction === "down" && origin === index - 1 ? downIn(1.3) : upOut(0.1)}
             >
-              <CustomLink link="https://github.com/daoma90" target="_blank">
+              <CustomLink
+                link="https://github.com/daoma90"
+                target="_blank"
+                ariaLabel="New window link to Github account"
+              >
                 <Icons icon="github" color="primaryAccent" size={50} />
               </CustomLink>
             </s.IconContainer>
@@ -75,7 +82,11 @@ const Footer: FC<FooterProps> = ({ direction, index, origin }) => {
               }}
               animate={direction === "down" && origin === index - 1 ? downIn(1.4) : upOut(0.2)}
             >
-              <CustomLink link="https://www.linkedin.com/in/davidoman90/" target="_blank">
+              <CustomLink
+                link="https://www.linkedin.com/in/davidoman90/"
+                target="_blank"
+                ariaLabel="New window link to Linkedin account"
+              >
                 <Icons icon="linkedin" color="primaryAccent" size={50} />
               </CustomLink>
             </s.IconContainer>
