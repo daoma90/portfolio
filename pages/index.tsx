@@ -65,8 +65,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   try {
     const res = await fetch("https://api.api-ninjas.com/v1/facts", request);
-    data = await res.json();
+    if (res.status === 200) {
+      data = await res.json();
+    } else {
+      data = "No fact today";
+    }
   } catch (e) {
+    data = "No fact today";
     console.log("fact fetch error", e);
   }
 
