@@ -10,7 +10,7 @@ export const Container = styled.header`
   flex-direction: column;
   height: 100%;
   z-index: 5;
-  pointer-events: none;
+  /* pointer-events: none; */
   // overflow: hidden;
   ${breakpoints.laptop} {
     height: unset;
@@ -53,5 +53,6 @@ export const HeaderNavLinkContainer = styled(m.div)`
 export const ToggleContainer = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 1rem;
 `;
