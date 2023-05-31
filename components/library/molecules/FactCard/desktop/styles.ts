@@ -1,8 +1,12 @@
+import { breakpoints } from "@/theme";
 import { m } from "framer-motion";
 import styled from "styled-components";
 
 export const Container = styled.div`
   position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
 export const BlobContainer = styled.div`
@@ -21,6 +25,8 @@ export const CardBackground = styled(m.div)`
   flex-direction: column;
   gap: 25px;
   border-radius: 25px;
+  transition: ${(props) => props.theme.utils.themeTransition};
+  margin: 0 auto;
 `;
 
 export const FactContent = styled(m.div)`
@@ -44,6 +50,7 @@ export const ToggleButton = styled.button`
   border-radius: 50%;
   background-color: ${(props) => props.theme.colors.primaryAccent};
   pointer-events: auto;
+  transition: ${(props) => props.theme.utils.themeTransition};
 `;
 
 export const Icon = styled.div`

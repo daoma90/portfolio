@@ -2,7 +2,7 @@ import CustomLink from "@/components/library/atoms/CustomLink";
 import Logo from "@/components/library/atoms/Logo";
 import TextReveal from "@/components/library/atoms/TextReveal";
 import { HeaderNavLink } from "@/components/library/atoms/typography";
-import FactCard from "@/components/library/molecules/FactCard";
+import FactCard from "@/components/library/molecules/FactCard/desktop";
 import { useFullPageContext } from "@/context/FullPageContext";
 import { useMouseContext } from "@/context/MouseContext";
 import { utils } from "@/theme";

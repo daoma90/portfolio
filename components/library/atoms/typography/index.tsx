@@ -31,7 +31,8 @@ export const H3 = styled(m.h3)`
 export const BodyRegular = styled(m.p)`
   ${sourceCodePro.style}
   weight: 400;
-  color: ${(props) => props.color || props.theme.colors.textPrimary};
+  color: ${(props) =>
+    props.color ? props.theme.colors[props.color] : props.theme.colors.textPrimary};
   font-size: clamp(14px, 4vw, 16px);
   transition: ${(props) => props.theme.utils.themeTransition};
 `;

@@ -1,15 +1,17 @@
 import { useFactContext } from "@/context/FactContext";
+import { useMenuContext } from "@/context/MenuContext";
 import { useMouseContext } from "@/context/MouseContext";
 import React, { useEffect, useRef, useState } from "react";
-import Icons from "../../atoms/Icons";
-import { BodyRegular } from "../../atoms/typography";
+import Icons from "../../../atoms/Icons";
+import { BodyRegular } from "../../../atoms/typography";
 import * as s from "./styles";
 
-const FactCard = () => {
+const FactCardMobile = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [contentHeight, setContentHeight] = useState<number>(0);
   const { fact } = useFactContext();
   const { cursorChangeHandler } = useMouseContext();
+  const { menuIsOpen } = useMenuContext();
   const ref = useRef<HTMLInputElement>(null);
 
   const toggleFactCard = () => {
@@ -23,13 +25,15 @@ const FactCard = () => {
   }, [ref, fact]);
 
   useEffect(() => {
-    console.log("content height", contentHeight);
-  }, [contentHeight]);
+    if (!menuIsOpen) {
+      setIsOpen(false);
+    }
+  }, [menuIsOpen]);
 
   return (
     <s.Container>
       <s.Icon>
-        <Icons icon="brain" color="secondaryAccent" size={25} />
+        <Icons icon="brain" color="secondaryAccent" size={35} />
       </s.Icon>
       <s.BlobContainer>
         <s.ToggleButton
@@ -37,16 +41,13 @@ const FactCard = () => {
           onMouseEnter={() => cursorChangeHandler("brain")}
           onMouseLeave={() => cursorChangeHandler("")}
         />
-        <s.CardBackground
-          initial={{ width: 38, height: 38, right: 0, top: 0 }}
+        <s.BackgroundContainer
+          initial={{ bottom: 0 }}
           animate={
             isOpen
-              ? { width: 400, height: contentHeight, right: -5, top: 38 }
+              ? { width: "100%", height: contentHeight, bottom: 40 }
               : {
-                  width: 38,
-                  height: 38,
-                  right: 0,
-                  top: 0,
+                  bottom: 0,
                   transition: {
                     duration: 0.3,
                     delay: 0,
@@ -54,32 +55,39 @@ const FactCard = () => {
                   },
                 }
           }
-          transition={{ type: "spring", damping: 10, stiffness: 150, mass: 0.5 }}
-        />
+          transition={{ type: "spring", damping: 10, stiffness: 170, mass: 0.5 }}
+        >
+          <s.CardBackground
+            initial={{ height: 50, width: 50 }}
+            animate={isOpen ? { width: "100%", height: contentHeight } : { height: 50, width: 50 }}
+            transition={{ type: "spring", damping: 10, stiffness: 170, mass: 0.5 }}
+          />
+        </s.BackgroundContainer>
       </s.BlobContainer>
-      <s.FactContent
-        ref={ref}
-        initial={{ scale: 0, right: -180, top: -85 }}
+      <s.FactContainer
+        initial={{ opacity: 0, scale: 0, bottom: -contentHeight / 2 + 20 }}
         animate={
           isOpen
             ? {
+                opacity: 1,
                 scale: 1,
-                right: -10,
-                top: 38,
-                transition: { type: "spring", damping: 10, stiffness: 150, mass: 0.5 },
+                bottom: 40,
+                transition: { type: "spring", damping: 10, stiffness: 170, mass: 0.5 },
               }
             : {
+                opacity: 0,
                 scale: 0,
-                right: -180,
-                top: -85,
+                bottom: -contentHeight / 2 + 20,
                 transition: { duration: 0.3, delay: 0, ease: "easeOut" },
               }
         }
-        transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+        transition={{ duration: 0.5, delay: 0, ease: "easeOut" }}
       >
-        <BodyRegular color="secondaryAccent">Fact of the day</BodyRegular>
-        <BodyRegular color="secondaryAccent">{fact}</BodyRegular>
-      </s.FactContent>
+        <s.FactContent ref={ref}>
+          <BodyRegular color="secondaryAccent">Fact of the day</BodyRegular>
+          <BodyRegular color="secondaryAccent">{fact}</BodyRegular>
+        </s.FactContent>
+      </s.FactContainer>
       <svg style={{ position: "fixed", top: "100vh" }}>
         <defs>
           <filter id="blob">
@@ -97,4 +105,4 @@ const FactCard = () => {
   );
 };
 
-export default FactCard;
+export default FactCardMobile;

@@ -1,3 +1,4 @@
+import { themeTransition } from "@/theme";
 import { m } from "framer-motion";
 import styled from "styled-components";
 
@@ -30,7 +31,7 @@ const Line = `
 height: 2px;
   width: 35px;
   border-radius: 10px;
-  transition: transform 0.6s cubic-bezier(.7,0,0,1);
+  transition: transform 0.6s cubic-bezier(.7,0,0,1), ${themeTransition};
 `;
 
 export const TopLine = styled.div<LineProps>`
