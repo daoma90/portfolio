@@ -7,6 +7,7 @@ import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
 import { FullPageProvider } from "@/context/FullPageContext";
 import { WindowProvider } from "@/context/WindowContext";
+import { FactProvider } from "@/context/FactContext";
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
@@ -16,12 +17,14 @@ export default function App({ Component, pageProps, router }: AppProps) {
           <MouseProvider>
             <MenuProvider>
               {/* <FullPageProvider> */}
-              <Layout>
-                <AnimatePresence mode="wait">
-                  <Component {...pageProps} key={router.pathname} />
-                </AnimatePresence>
-                <Analytics />
-              </Layout>
+              <FactProvider>
+                <Layout>
+                  <AnimatePresence mode="wait">
+                    <Component {...pageProps} key={router.pathname} />
+                  </AnimatePresence>
+                  <Analytics />
+                </Layout>
+              </FactProvider>
               {/* </FullPageProvider> */}
             </MenuProvider>
           </MouseProvider>

@@ -22,8 +22,6 @@ export const useFactContext = () => {
 export const FactProvider: FC<FactProviderProps> = ({ children }) => {
   const [fact, setFact] = useState<string>("");
 
-  const router = useRouter();
-
   const handleSetFact = (fact: string) => {
     setFact(fact);
   };

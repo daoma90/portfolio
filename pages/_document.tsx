@@ -28,6 +28,7 @@ export default class MyDocument extends Document {
         <Head />
         <body>
           <Image
+            priority={true}
             alt="ignore"
             width="99999"
             height="99999"
