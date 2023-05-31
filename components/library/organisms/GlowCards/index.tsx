@@ -79,7 +79,7 @@ const GlowCards: FC<GlowCardsProps> = ({ direction, index, origin }) => {
             : direction === "up" && origin === index && upOut(0)
         }
       >
-        <TextReveal inView={inView} direction="x" blockDelay={0.7} blockDuration={1}>
+        <TextReveal inView={inView} direction="x" blockDelay={1.3} blockDuration={1}>
           <H2>What can I do?</H2>
         </TextReveal>
       </m.div>
