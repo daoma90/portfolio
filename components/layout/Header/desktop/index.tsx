@@ -1,5 +1,4 @@
 import CustomLink from "@/components/library/atoms/CustomLink";
-import FactToggle from "@/components/library/atoms/FactToggle";
 import Logo from "@/components/library/atoms/Logo";
 import TextReveal from "@/components/library/atoms/TextReveal";
 import { HeaderNavLink } from "@/components/library/atoms/typography";
@@ -64,11 +63,10 @@ const DesktopHeader = () => {
           {renderHeaderLink("/#contact", "<Contact />", "construction")}
         </s.Navigation>
         <s.ToggleContainer>
-          <FactToggle />
+          <FactCard />
           <ThemeToggle />
         </s.ToggleContainer>
       </s.Header>
-      <FactCard />
     </s.Container>
   );
 };
