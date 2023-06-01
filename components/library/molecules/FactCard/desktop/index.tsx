@@ -41,7 +41,7 @@ const FactCard = () => {
           initial={{ width: 38, height: 38, right: 0, top: 0 }}
           animate={
             isOpen
-              ? { width: 400, height: contentHeight, right: -5, top: isSafari ? 50 : 38 }
+              ? { width: 400, height: contentHeight, right: -5, top: isSafari ? 50 : 35 }
               : {
                   width: 38,
                   height: 38,
@@ -65,7 +65,7 @@ const FactCard = () => {
             ? {
                 scale: 1,
                 right: -10,
-                top: isSafari ? 50 : 38,
+                top: isSafari ? 50 : 35,
                 transition: { type: "spring", damping: 10, stiffness: 150, mass: 0.5 },
               }
             : {
@@ -84,7 +84,7 @@ const FactCard = () => {
         <svg style={{ position: "fixed", top: "100vh" }}>
           <defs>
             <filter id="blob" filterRes="1">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"></feGaussianBlur>
+              <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"></feGaussianBlur>
               <feColorMatrix
                 in="blur"
                 mode="matrix"

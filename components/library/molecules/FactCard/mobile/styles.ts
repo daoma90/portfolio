@@ -31,6 +31,7 @@ export const BackgroundContainer = styled(m.div)`
 export const CardBackground = styled(m.div)`
   width: 100%;
   height: 100%;
+  max-width: 500px;
   background-color: ${(props) => props.theme.colors.primaryAccent};
   border-radius: 25px;
   transition: ${(props) => props.theme.utils.themeTransition};
@@ -39,17 +40,20 @@ export const CardBackground = styled(m.div)`
 export const FactContainer = styled(m.div)`
   width: 100%;
   position: absolute;
+  align-items: center;
+  justify-content: center;
   right: 0;
   left: 0;
   display: flex;
-  align-items: center;
 `;
 
 export const FactContent = styled(m.div)`
   width: 100%;
   height: 100%;
   display: flex;
+  max-width: 500px;
   flex-direction: column;
+  // align-items: center;
   gap: 25px;
   padding: 50px;
   pointer-events: none;
