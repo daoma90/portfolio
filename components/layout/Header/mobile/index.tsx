@@ -3,6 +3,8 @@ import CustomLink from "@/components/library/atoms/CustomLink";
 import Logo from "@/components/library/atoms/Logo";
 import TextReveal from "@/components/library/atoms/TextReveal";
 import { HeaderNavLink } from "@/components/library/atoms/typography";
+import FactCard from "@/components/library/molecules/FactCard/desktop";
+import FactCardMobile from "@/components/library/molecules/FactCard/mobile";
 import { useMenuContext } from "@/context/MenuContext";
 import { useMouseContext } from "@/context/MouseContext";
 import { utils } from "@/theme";
@@ -25,6 +27,7 @@ const MobileHeader = () => {
           }
         }}
         onMouseLeave={() => cursorChangeHandler("")}
+        exit={{ transition: { delay: 1 } }}
       >
         <TextReveal direction="x" blockDelay={index * 0.3 + 0.2} blockDuration={1}>
           {hoverType === "link" ? (
@@ -46,16 +49,24 @@ const MobileHeader = () => {
       </s.MobileHeaderContainer>
       <AnimatePresence>
         <s.MobileMenuContainer show={menuIsOpen}>
-          <s.MenuContentContainer>
-            {menuIsOpen && (
-              <s.Navigation>
-                {renderHeaderLink("/", "<Home />", "link", 0)}
-                {renderHeaderLink("/about", "<About />", "link", 1)}
-                {renderHeaderLink("/contact", "<Contact />", "construction", 2)}
-              </s.Navigation>
-            )}
-            <ThemeToggle />
-          </s.MenuContentContainer>
+          <s.MobileMenuBackground>
+            <s.MenuContentContainer>
+              <ThemeToggle />
+              <AnimatePresence>
+                {menuIsOpen && (
+                  <s.Navigation
+                    initial={{ opacity: 1 }}
+                    exit={{ opacity: 0, transition: { delay: 1 } }}
+                  >
+                    {renderHeaderLink("/", "<Home />", "link", 0)}
+                    {renderHeaderLink("/about", "<About />", "link", 1)}
+                    {renderHeaderLink("/contact", "<Contact />", "construction", 2)}
+                  </s.Navigation>
+                )}
+              </AnimatePresence>
+              <FactCardMobile />
+            </s.MenuContentContainer>
+          </s.MobileMenuBackground>
         </s.MobileMenuContainer>
       </AnimatePresence>
     </s.Container>

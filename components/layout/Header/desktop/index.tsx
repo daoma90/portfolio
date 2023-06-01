@@ -2,6 +2,7 @@ import CustomLink from "@/components/library/atoms/CustomLink";
 import Logo from "@/components/library/atoms/Logo";
 import TextReveal from "@/components/library/atoms/TextReveal";
 import { HeaderNavLink } from "@/components/library/atoms/typography";
+import FactCard from "@/components/library/molecules/FactCard/desktop";
 import { useFullPageContext } from "@/context/FullPageContext";
 import { useMouseContext } from "@/context/MouseContext";
 import { utils } from "@/theme";
@@ -60,23 +61,11 @@ const DesktopHeader = () => {
           {renderHeaderLink("/", "<Home />", "arrow-forward")}
           {renderHeaderLink("/about", "<About />", "construction")}
           {renderHeaderLink("/#contact", "<Contact />", "construction")}
-          {/* <s.HeaderNavLinkContainer
-            onMouseEnter={() => {
-              cursorChangeHandler("arrow-down");
-            }}
-            onMouseLeave={() => cursorChangeHandler("")}
-            onClick={() => handleMoveTo(3)}
-          >
-            <TextReveal
-              direction="y"
-              blockDelay={3.5 + utils.pageTransitionDuration}
-              blockDuration={0.6}
-            >
-              <HeaderNavLink>{"<Contact />"}</HeaderNavLink>
-            </TextReveal>
-          </s.HeaderNavLinkContainer> */}
         </s.Navigation>
-        <ThemeToggle />
+        <s.ToggleContainer>
+          <FactCard />
+          <ThemeToggle />
+        </s.ToggleContainer>
       </s.Header>
     </s.Container>
   );

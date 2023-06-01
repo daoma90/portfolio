@@ -18,7 +18,7 @@ export const Container = styled.header`
   }
 `;
 
-export const Navigation = styled.div`
+export const Navigation = styled(m.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,6 +33,9 @@ export const MobileMenuBackground = styled.div`
   background-color: ${(props) => props.theme.colors.background};
   width: 100%;
   height: 100%;
+  min-height: 100svh;
+  transition: ${(props) => props.theme.utils.themeTransition};
+  overflow-y: auto;
 `;
 
 export const MobileMenuContainer = styled.div<{ show: boolean }>`
@@ -41,7 +44,6 @@ export const MobileMenuContainer = styled.div<{ show: boolean }>`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background-color: ${(props) => props.theme.colors.background};
   transform: ${(props) => (props.show ? "translate(0)" : "translate(100%)")};
   transition: transform 0.5s cubic-bezier(0.7, 0, 0, 1);
   pointer-events: auto;
@@ -63,14 +65,14 @@ export const MobileHeaderContainer = styled.div<{ menuIsOpen: boolean }>`
 `;
 
 export const MenuContentContainer = styled.div`
-  height: 100%;
+  min-height: 100%;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  margin-top: 20%;
+  justify-content: center;
+  /* margin-top: 20%; */
   gap: 15vh;
-  padding: 4rem;
+  padding: 8rem;
   padding-left: 2rem;
   padding-right: 2rem;
 `;

@@ -61,8 +61,20 @@ export const getStaticProps: GetStaticProps = async (context) => {
     contentType: "application/json",
   };
 
-  // const res = await fetch("https://api.api-ninjas.com/v1/facts", request);
-  // const data = await res.json();
-  const data = [{ fact: "No fact today" }];
+  let data;
+
+  try {
+    const res = await fetch("https://api.api-ninjas.com/v1/facts", request);
+    if (res.status === 200) {
+      data = await res.json();
+    } else {
+      data = "No fact today";
+    }
+  } catch (e) {
+    data = "No fact today";
+    console.log("fact fetch error", e);
+  }
+
+  // const data = [{ fact: "No fact today" }];
   return { props: { fact: data[0].fact || null } };
 };

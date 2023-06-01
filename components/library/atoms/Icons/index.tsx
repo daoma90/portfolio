@@ -10,6 +10,7 @@ import {
   IoSunnyOutline,
 } from "react-icons/io5";
 import styled from "styled-components";
+import BrainIcon from "./brain";
 import ExpoIcon from "./expo";
 import FigmaIcon from "./figma";
 import GithubIcon from "./github";
@@ -119,6 +120,12 @@ const Icons: FC<IconsProps> = ({ icon, size, color }) => {
       );
     case "construction":
       return <Image src="/underconstruction.png" alt="Construction sign" width={40} height={40} />;
+    case "brain":
+      return (
+        <StyledIcon size={size} color={color}>
+          <BrainIcon size={size} />
+        </StyledIcon>
+      );
     default:
       return null;
   }

@@ -10,8 +10,8 @@ export const Container = styled.header`
   flex-direction: column;
   height: 100%;
   z-index: 5;
-  pointer-events: none;
-  overflow: hidden;
+  /* pointer-events: none; */
+  // overflow: hidden;
   ${breakpoints.laptop} {
     height: unset;
     flex-direction: row;
@@ -50,13 +50,9 @@ export const HeaderNavLinkContainer = styled(m.div)`
   overflow: hidden;
 `;
 
-export const Block = styled(m.div)`
-  position: absolute;
-  top: -10px;
-  left: 0;
-  right: 0;
-  bottom: -10px;
-  will-change: transform;
-  background-color: ${(props) => props.theme.colors.primaryAccent};
-  transition: unset;
+export const ToggleContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
 `;
