@@ -33,7 +33,9 @@ export const MobileMenuBackground = styled.div`
   background-color: ${(props) => props.theme.colors.background};
   width: 100%;
   height: 100%;
+  min-height: 100svh;
   transition: ${(props) => props.theme.utils.themeTransition};
+  overflow-y: auto;
 `;
 
 export const MobileMenuContainer = styled.div<{ show: boolean }>`
@@ -63,14 +65,14 @@ export const MobileHeaderContainer = styled.div<{ menuIsOpen: boolean }>`
 `;
 
 export const MenuContentContainer = styled.div`
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  margin-top: 20%;
+  justify-content: center;
+  /* margin-top: 20%; */
   gap: 15vh;
-  padding: 4rem;
+  padding: 8rem;
   padding-left: 2rem;
   padding-right: 2rem;
 `;

@@ -11,6 +11,7 @@ export const Container = styled.div`
   border: 2px solid ${(props) => props.theme.colors.primaryAccent};
   border-radius: 30px;
   pointer-events: auto;
+  transition: ${(props) => props.theme.utils.themeTransition};
 `;
 
 export const ThemeItem = styled.button`

@@ -41,7 +41,6 @@ export const FactContainer = styled(m.div)`
   position: absolute;
   right: 0;
   left: 0;
-  /* z-index: -1; */
   display: flex;
   align-items: center;
 `;
@@ -59,8 +58,8 @@ export const FactContent = styled(m.div)`
 export const ToggleButton = styled.button`
   position: relative;
   z-index: 2;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   border: none;
   border-radius: 50%;
   background-color: ${(props) => props.theme.colors.primaryAccent};
@@ -71,8 +70,8 @@ export const ToggleButton = styled.button`
 export const Icon = styled.div`
   position: absolute;
   z-index: 2;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
