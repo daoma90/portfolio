@@ -1,6 +1,7 @@
 import { useFactContext } from "@/context/FactContext";
 import { useMenuContext } from "@/context/MenuContext";
 import { useMouseContext } from "@/context/MouseContext";
+import { useWindowContext } from "@/context/WindowContext";
 import React, { useEffect, useRef, useState } from "react";
 import Icons from "../../../atoms/Icons";
 import { BodyRegular } from "../../../atoms/typography";
@@ -12,6 +13,7 @@ const FactCardMobile = () => {
   const { fact } = useFactContext();
   const { cursorChangeHandler } = useMouseContext();
   const { menuIsOpen } = useMenuContext();
+  const { windowWidth } = useWindowContext();
   const ref = useRef<HTMLInputElement>(null);
 
   const toggleFactCard = () => {
@@ -22,7 +24,7 @@ const FactCardMobile = () => {
     if (ref.current) {
       setContentHeight(ref.current.clientHeight);
     }
-  }, [ref, fact]);
+  }, [ref, fact, windowWidth]);
 
   useEffect(() => {
     if (!menuIsOpen) {
@@ -45,7 +47,7 @@ const FactCardMobile = () => {
           initial={{ bottom: 0 }}
           animate={
             isOpen
-              ? { width: "100%", height: contentHeight, bottom: 40 }
+              ? { width: "100%", height: contentHeight, bottom: 60 }
               : {
                   bottom: 0,
                   transition: {
@@ -55,12 +57,20 @@ const FactCardMobile = () => {
                   },
                 }
           }
-          transition={{ type: "spring", damping: 10, stiffness: 170, mass: 0.5 }}
+          transition={{ type: "spring", damping: 12, stiffness: 170, mass: 0.5 }}
         >
           <s.CardBackground
             initial={{ height: 50, width: 50 }}
-            animate={isOpen ? { width: "100%", height: contentHeight } : { height: 50, width: 50 }}
-            transition={{ type: "spring", damping: 10, stiffness: 170, mass: 0.5 }}
+            animate={
+              isOpen
+                ? { width: "100%", height: contentHeight }
+                : {
+                    height: 50,
+                    width: 50,
+                    transition: { duration: 0.2, delay: 0, ease: "easeOut" },
+                  }
+            }
+            transition={{ type: "spring", damping: 12, stiffness: 170, mass: 0.5 }}
           />
         </s.BackgroundContainer>
       </s.BlobContainer>
@@ -71,14 +81,14 @@ const FactCardMobile = () => {
             ? {
                 opacity: 1,
                 scale: 1,
-                bottom: 40,
-                transition: { type: "spring", damping: 10, stiffness: 170, mass: 0.5 },
+                bottom: 60,
+                transition: { type: "spring", damping: 12, stiffness: 170, mass: 0.5 },
               }
             : {
                 opacity: 0,
                 scale: 0,
                 bottom: -contentHeight / 2 + 20,
-                transition: { duration: 0.3, delay: 0, ease: "easeOut" },
+                transition: { duration: 0.2, delay: 0, ease: "easeOut" },
               }
         }
         transition={{ duration: 0.5, delay: 0, ease: "easeOut" }}

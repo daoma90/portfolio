@@ -1,5 +1,6 @@
 import { useFactContext } from "@/context/FactContext";
 import { useMouseContext } from "@/context/MouseContext";
+import { useWindowContext } from "@/context/WindowContext";
 import React, { useEffect, useRef, useState } from "react";
 import Icons from "../../../atoms/Icons";
 import { BodyRegular } from "../../../atoms/typography";
@@ -10,6 +11,7 @@ const FactCard = () => {
   const [contentHeight, setContentHeight] = useState<number>(0);
   const { fact } = useFactContext();
   const { cursorChangeHandler } = useMouseContext();
+  const { windowWidth } = useWindowContext();
   const ref = useRef<HTMLInputElement>(null);
 
   const toggleFactCard = () => {
@@ -20,7 +22,7 @@ const FactCard = () => {
     if (ref.current) {
       setContentHeight(ref.current.clientHeight);
     }
-  }, [ref, fact]);
+  }, [ref, fact, windowWidth]);
 
   return (
     <s.Container>
