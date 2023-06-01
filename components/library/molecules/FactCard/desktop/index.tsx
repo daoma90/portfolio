@@ -34,6 +34,7 @@ const FactCard = () => {
           onClick={() => toggleFactCard()}
           onMouseEnter={() => cursorChangeHandler("brain")}
           onMouseLeave={() => cursorChangeHandler("")}
+          aria-label="Toggle fact of the day card."
         />
         <s.CardBackground
           initial={{ width: 38, height: 38, right: 0, top: 0 }}
