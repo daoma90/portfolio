@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Icons from "../../../atoms/Icons";
 import { BodyRegular } from "../../../atoms/typography";
 import * as s from "./styles";
+import { isSafari } from "react-device-detect";
 
 const FactCard = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -40,7 +41,7 @@ const FactCard = () => {
           initial={{ width: 38, height: 38, right: 0, top: 0 }}
           animate={
             isOpen
-              ? { width: 400, height: contentHeight, right: -5, top: 38 }
+              ? { width: 400, height: contentHeight, right: -5, top: isSafari ? 50 : 38 }
               : {
                   width: 38,
                   height: 38,
@@ -64,7 +65,7 @@ const FactCard = () => {
             ? {
                 scale: 1,
                 right: -10,
-                top: 38,
+                top: isSafari ? 50 : 38,
                 transition: { type: "spring", damping: 10, stiffness: 150, mass: 0.5 },
               }
             : {
@@ -79,19 +80,21 @@ const FactCard = () => {
         <BodyRegular color="secondaryAccent">Fact of the day</BodyRegular>
         <BodyRegular color="secondaryAccent">{fact}</BodyRegular>
       </s.FactContent>
-      <svg style={{ position: "fixed", top: "100vh" }}>
-        <defs>
-          <filter id="blob">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"></feGaussianBlur>
-            <feColorMatrix
-              in="blur"
-              mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-              result="blob"
-            ></feColorMatrix>
-          </filter>
-        </defs>
-      </svg>
+      {!isSafari && (
+        <svg style={{ position: "fixed", top: "100vh" }}>
+          <defs>
+            <filter id="blob" filterRes="1">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"></feGaussianBlur>
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                result="blob"
+              ></feColorMatrix>
+            </filter>
+          </defs>
+        </svg>
+      )}
     </s.Container>
   );
 };
